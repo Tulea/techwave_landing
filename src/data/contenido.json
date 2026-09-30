@@ -196,10 +196,6 @@
     "title": "Trabajamos con fabricantes líderes del mercado",
     "items": [
       {
-        "name": "Veeam",
-        "logo": "/assets/logos/Veeam.svg"
-      },
-      {
         "name": "Sophos",
         "logo": "/assets/logos/Sophos.svg"
       },
@@ -214,6 +210,10 @@
       {
         "name": "Cloudflare",
         "logo": "/assets/logos/Cloudflare.svg"
+      },
+      {
+        "name": "Veeam",
+        "logo": "/assets/logos/Veeam.svg"
       }
     ],
     "note": "Alianzas estratégicas con fabricantes reconocidos a nivel mundial."

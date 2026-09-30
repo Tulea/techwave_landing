@@ -16,7 +16,7 @@ export default function LogoWall() {
                 <img
                   src={item.logo}
                   alt={item.name}
-                  className="h-12 w-auto object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
+                  className="h-12 w-auto object-contain"
                 />
               ) : (
                 <span className="px-2 py-1 text-xl font-bold text-slate-400">{item.name}</span>

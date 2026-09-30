@@ -25,4 +25,15 @@ describe('Nosotros', () => {
       expect(screen.getByRole('heading', { name: v.name })).toBeInTheDocument()
     })
   })
+
+  it('muestra los 5 fabricantes de certificaciones y alianzas con su logo', () => {
+    render(
+      <MemoryRouter>
+        <Nosotros />
+      </MemoryRouter>,
+    )
+    about.certifications.items.forEach((item) => {
+      expect(screen.getByRole('img', { name: item.name })).toBeInTheDocument()
+    })
+  })
 })

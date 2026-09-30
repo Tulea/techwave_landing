@@ -324,8 +324,26 @@
       "eyebrow": "Certificaciones y alianzas",
       "title": "Respaldados por fabricantes líderes",
       "items": [
-        "Veeam",
-        "Sophos"
+        {
+          "name": "Sophos",
+          "logo": "/assets/logos/Sophos.svg"
+        },
+        {
+          "name": "Lumu",
+          "logo": "/assets/logos/Lumu.png"
+        },
+        {
+          "name": "Fortinet",
+          "logo": "/assets/logos/Fortinet.svg"
+        },
+        {
+          "name": "Cloudflare",
+          "logo": "/assets/logos/Cloudflare.svg"
+        },
+        {
+          "name": "Veeam",
+          "logo": "/assets/logos/Veeam.svg"
+        }
       ]
     }
   },

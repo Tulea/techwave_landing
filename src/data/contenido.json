@@ -1,6 +1,8 @@
 {
   "site": {
     "name": "TechWave IT Services",
+    "metaTitle": "TechWave IT Services — Tecnología, Infraestructura, Consultoría y Ciberseguridad",
+    "metaDescription": "TechWave IT Services: soluciones de tecnología, infraestructura, consultoría y ciberseguridad para empresas en Costa Rica. Su aliado estratégico en TI.",
     "brandText": "TechWave",
     "tagline": "Empresas protegidas, operación sin interrupciones.",
     "phone": "+506 7128-7960",
@@ -163,7 +165,10 @@
     "eyebrow": "Nuestros servicios",
     "title": "Soluciones integrales para su operación",
     "intro": "Cuatro líneas de servicio que cubren su tecnología de punta a punta: desde la planeación hasta la protección.",
-    "cta": "Solicitar cotización"
+    "cta": {
+      "label": "Solicitar cotización",
+      "to": "/contacto"
+    }
   },
   "proteja": {
     "eyebrow": "Proteja sus datos",

@@ -39,8 +39,8 @@ export default function Servicios() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contacto" className="btn-primary mt-8">
-                  {servicesPage.cta}
+                <Link to={servicesPage.cta.to} className="btn-primary mt-8">
+                  {servicesPage.cta.label}
                 </Link>
               </div>
               <div className="rounded-3xl bg-gradient-to-br from-brand-100 to-brand-50 p-1">

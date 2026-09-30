@@ -2,19 +2,10 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import Home from './Home.jsx'
 import { hero, services } from '../data/content.js'
-
-class MockObserver {
-  constructor(cb) {
-    this.cb = cb
-  }
-  observe(el) {
-    this.cb([{ isIntersecting: true }])
-  }
-  disconnect() {}
-}
+import { mockIntersectionObserver } from '../test/mockIntersectionObserver.js'
 
 beforeAll(() => {
-  vi.stubGlobal('IntersectionObserver', MockObserver)
+  mockIntersectionObserver()
 })
 
 afterAll(() => {

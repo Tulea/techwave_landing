@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { nav, footer, notFound } from './data/content.js'
+import { mockIntersectionObserver } from './test/mockIntersectionObserver.js'
 
 function renderAt(path) {
   return render(
@@ -12,18 +13,8 @@ function renderAt(path) {
 }
 
 // Home y Nosotros incluyen la sección Counters, que usa IntersectionObserver.
-class MockObserver {
-  constructor(cb) {
-    this.cb = cb
-  }
-  observe(el) {
-    this.cb([{ isIntersecting: true }])
-  }
-  disconnect() {}
-}
-
 beforeAll(() => {
-  vi.stubGlobal('IntersectionObserver', MockObserver)
+  mockIntersectionObserver()
 })
 
 afterAll(() => {

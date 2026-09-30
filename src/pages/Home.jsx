@@ -1,10 +1,27 @@
+import Hero from '../components/home/Hero.jsx'
+import QuickLinks from '../components/home/QuickLinks.jsx'
+import AboutBrief from '../components/home/AboutBrief.jsx'
+import PainPoints from '../components/home/PainPoints.jsx'
+import ServiceCards from '../components/home/ServiceCards.jsx'
+import ProtejaSusDatos from '../components/home/ProtejaSusDatos.jsx'
+import LogoWall from '../components/home/LogoWall.jsx'
+import Counters from '../components/Counters.jsx'
+import Testimonials from '../components/home/Testimonials.jsx'
+import FinalCta from '../components/home/FinalCta.jsx'
+
 export default function Home() {
   return (
-    <section className="section">
-      <div className="container-site">
-        <h1 className="text-3xl font-bold text-brand-900">Inicio</h1>
-        <p className="mt-4 text-slate-600">Contenido en construcción (Tarea 5).</p>
-      </div>
-    </section>
+    <>
+      <Hero />
+      <QuickLinks />
+      <AboutBrief />
+      <PainPoints />
+      <ServiceCards />
+      <ProtejaSusDatos />
+      <LogoWall />
+      <Counters />
+      <Testimonials />
+      <FinalCta />
+    </>
   )
 }

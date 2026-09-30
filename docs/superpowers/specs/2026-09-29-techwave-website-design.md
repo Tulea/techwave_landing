@@ -43,7 +43,8 @@ de software, gestión de datos y soluciones cloud como oferta independiente.
     ├── App.jsx             # Layout: Navbar + Routes + Footer
     ├── index.css           # Tailwind + tokens de marca
     ├── data/
-    │   └── content.js      # TODOS los textos del sitio centralizados
+    │   ├── contenido.json  # TODOS los textos (archivo de texto editable)
+    │   └── content.js      # re-export delgado de contenido.json
     ├── hooks/
     │   └── useZohoForm.js  # lógica de envío del formulario
     ├── components/         # Navbar, Footer, Hero, QuickLinks, ServiceCard,
@@ -55,8 +56,9 @@ de software, gestión de datos y soluciones cloud como oferta independiente.
         └── Contacto.jsx    # /contacto
 ```
 
-- Datos centralizados en `src/data/content.js`: editar contenido no requiere tocar
-  componentes.
+- Datos centralizados en `src/data/contenido.json` (archivo de texto plano,
+  editable por el usuario sin tocar código): editar contenido no requiere tocar
+  componentes; `content.js` solo lo re-exporta.
 - Formulario: `fetch POST` a `VITE_ZOHO_FORM_URL` (webhook de Zoho Forms en modo
   JSONString). Sin servidor intermedio.
 - Build estático a `dist/`. Ruta 404 custom (NotFound) + fallback SPA en
@@ -110,7 +112,7 @@ de software, gestión de datos y soluciones cloud como oferta independiente.
 - **Responsive**: mobile-first, menú hamburguesa en móvil.
 - Sin dark mode (no requerido).
 
-## 6. Contenido a redactar (src/data/content.js)
+## 6. Contenido a redactar (src/data/contenido.json)
 
 - Posicionamiento y cifras del hero (cifras reales por confirmar con el cliente;
   placeholders claros mientras tanto).

@@ -4,7 +4,7 @@
 
 **Goal:** Construir el nuevo sitio web estático de TechWave IT Services (multi-página, React) listo para desplegar en Cloudflare Pages.
 
-**Architecture:** Vite + React 19 + React Router (4 rutas) + Tailwind CSS v4. Sin backend: el formulario hace POST directo al webhook de Zoho Forms. Todo el contenido vive en `src/data/content.js`. Build estático a `dist/` con fallback SPA (`_redirects`) para Cloudflare Pages.
+**Architecture:** Vite + React 19 + React Router (4 rutas) + Tailwind CSS v4. Sin backend: el formulario hace POST directo al webhook de Zoho Forms. Todo el contenido vive en `src/data/contenido.json` (JSON editable de texto plano, re-exportado por `src/data/content.js`). Build estático a `dist/` con fallback SPA (`_redirects`) para Cloudflare Pages.
 
 **Tech Stack:** Vite 7, React 19, react-router-dom 7, Tailwind CSS 4 (@tailwindcss/vite), Vitest 3 + Testing Library (jsdom).
 
@@ -19,11 +19,12 @@
 - Paleta: morado `#31285d` (brand-800) como color principal, acento cyan `#06b6d4`. Tema claro. Tipografía Inter (Google Fonts).
 - Consistencia visual entre páginas (requisito explícito del usuario): las 4 páginas comparten el MISMO lenguaje visual — mismas tarjetas (`rounded-2xl border border-slate-200 shadow-sm`), mismo ritmo de secciones (`.section`), mismos botones (`btn-primary`/`btn-secondary`), mismos encabezados (`SectionHeading`), misma tipografía y paleta. Ninguna página introduce estilos propios fuera del sistema.
 - Marca: `./Logos/3.png` es la imagen principal (logo navbar + favicon + visual del hero). Los SVG de `./Sitio web` son complementarios.
-- Cifras del hero y contadores: usar los valores placeholder del contenido con el comentario `// CIFRAS POR CONFIRMAR` (el usuario aún no proporciona datos reales).
+- Cifras del hero y contadores: usar los valores placeholder del contenido, listados en la clave `_notas` de `src/data/contenido.json` (el usuario aún no proporciona datos reales).
 - Formulario: URL del webhook en `VITE_ZOHO_FORM_URL` (`.env`), nunca hardcodeada.
 - Cada tarea termina con su commit. Mensajes de commit terminan con:
   `Co-Authored-By: Claude Code <noreply@anthropic.com>`
 - Rutas relativas de assets: `/assets/...` (raíz pública).
+- Contenido editable (requisito del usuario): TODOS los textos del sitio — menú, CTA del navbar, copyright del footer, hero, secciones, formulario — viven en UN solo archivo de texto plano `src/data/contenido.json` (JSON UTF-8 con claves en español, legible y editable sin código). `src/data/content.js` es SOLO un re-export delgado (cero textos). El build lee el JSON en tiempo de compilación: editar el archivo + push → Cloudflare reconstruye y publica. JSON mal formado = build falla = el sitio publicado queda intacto.
 - Node >= 20.19 requerido (vite@7 lo exige). En esta máquina se usa Node portable v22.23.3: agregar `C:\Users\tulea\.local\node` al PATH de cada shell antes de los comandos npm/node (`$env:Path = "C:\Users\tulea\.local\node;" + $env:Path` en PowerShell; `export PATH="/c/Users/tulea/.local/node:$PATH"` en Git Bash).
 
 ---
@@ -960,17 +961,74 @@ Co-Authored-By: Claude Code <noreply@anthropic.com>"
 
 ---
 
-### Task 4: Sección compartida — encabezados y contadores animados
+### Task 4: Sección compartida — contenido editable en JSON, encabezados y contadores animados
 
 **Files:**
-- Create: `src/components/SectionHeading.jsx`, `src/components/Counters.jsx`
+- Create: `src/data/contenido.json`, `src/components/SectionHeading.jsx`, `src/components/Counters.jsx`
+- Modify: `src/data/content.js`, `src/components/Navbar.jsx`, `src/data/content.test.js`
 - Test: `src/components/Counters.test.jsx`
 
 **Interfaces:**
-- Consumes: `counters` de `src/data/content.js`.
-- Produces: `<SectionHeading eyebrow title intro />` y `<Counters />` (sección con contadores animados al entrar en viewport). Usados por Home (Task 5) y Nosotros (Task 6).
+- Consumes: `counters` de `src/data/content.js` (que re-exporta `src/data/contenido.json`).
+- Produces: `src/data/contenido.json` (fuente única de todos los textos, editable por el usuario), `src/data/content.js` como re-export delgado sin textos, `<SectionHeading eyebrow title intro />` y `<Counters />` (sección con contadores animados al entrar en viewport). Usados por Home (Task 5) y Nosotros (Task 6).
 
-- [ ] **Step 1: Crear src/components/SectionHeading.jsx**
+- [ ] **Step 1: Migrar todo el contenido a src/data/contenido.json**
+
+Reglas de la migración (requisito del usuario: editar textos sin tocar código):
+- Leer `src/data/content.js` completo. Migrar sus 14 exports (`site`, `nav`, `hero`, `quickLinks`, `aboutBrief`, `painPoints`, `services`, `proteja`, `allies`, `counters`, `testimonials`, `finalCta`, `about`, `contact`) a claves de nivel superior del JSON con el MISMO nombre y los MISMOS valores, carácter por carácter (tildes y caracteres especiales en UTF-8, sin escapes `\u`).
+- Añadir a `nav` la propiedad `cta: "Assessment gratis"` (hoy está hardcodeada dos veces en Navbar.jsx).
+- Añadir al final la clave `_notas` (objeto de comentarios en español que el código ignora): explicar (a) que este archivo es la única fuente de TODOS los textos del sitio; (b) cómo editar: cambiar el texto, guardar y hacer push → Cloudflare reconstruye y publica; (c) qué cifras son placeholders por confirmar (las marcadas hoy con `// CIFRAS POR CONFIRMAR` en content.js); (d) advertencia de mantener el JSON válido (comas y comillas): si queda mal formado, el build falla y el sitio publicado sigue intacto.
+- Formato: indentación de 2 espacios, una clave por línea, sin minificar, terminado en salto de línea.
+- PROHIBIDO alterar o traducir ningún texto: la migración es solo de formato y ubicación.
+- Dentro de los strings, usar comillas tipográficas («» o ’) en lugar de escapar comillas rectas.
+
+- [ ] **Step 2: Reescribir src/data/content.js como re-export delgado**
+
+```js
+import contenido from './contenido.json'
+
+export const {
+  site,
+  nav,
+  hero,
+  quickLinks,
+  aboutBrief,
+  painPoints,
+  services,
+  proteja,
+  allies,
+  counters,
+  testimonials,
+  finalCta,
+  about,
+  contact,
+} = contenido
+```
+
+Debe quedar SIN ningún texto de la página. Los comentarios `// CIFRAS POR CONFIRMAR` pasan a `_notas` del JSON.
+
+- [ ] **Step 3: Consumir nav.cta en Navbar y limpiar import muerto**
+
+En `src/components/Navbar.jsx`:
+- Reemplazar las dos apariciones hardcodeadas del texto "Assessment gratis" (desktop y móvil) por `{nav.cta}`.
+- Cambiar `import { site, nav } from '../data/content.js'` por `import { nav } from '../data/content.js'` (el import de `site` quedó sin uso).
+- Nada más cambia.
+
+- [ ] **Step 4: Añadir test de paridad JSON↔exports a src/data/content.test.js**
+
+```js
+import contenido from './contenido.json'
+import * as content from './content.js'
+
+it('contenido.json y content.js exponen exactamente las mismas claves de contenido', () => {
+  const jsonKeys = Object.keys(contenido).filter((k) => !k.startsWith('_'))
+  expect(jsonKeys.sort()).toEqual(Object.keys(content).sort())
+})
+```
+
+Correr `npm test`: los 5 tests existentes de content.test.js deben seguir verdes SIN cambios (prueban los mismos valores a través del re-export).
+
+- [ ] **Step 5: Crear src/components/SectionHeading.jsx**
 
 ```jsx
 export default function SectionHeading({ eyebrow, title, intro, align = 'center', dark = false }) {
@@ -987,7 +1045,7 @@ export default function SectionHeading({ eyebrow, title, intro, align = 'center'
 }
 ```
 
-- [ ] **Step 2: Crear src/components/Counters.jsx**
+- [ ] **Step 6: Crear src/components/Counters.jsx**
 
 ```jsx
 import { useEffect, useRef, useState } from 'react'
@@ -1059,7 +1117,7 @@ export default function Counters() {
 }
 ```
 
-- [ ] **Step 3: Escribir el test de Counters**
+- [ ] **Step 7: Escribir el test de Counters**
 
 `src/components/Counters.test.jsx`:
 ```jsx
@@ -1096,16 +1154,16 @@ describe('Counters', () => {
 })
 ```
 
-- [ ] **Step 4: Correr los tests**
+- [ ] **Step 8: Correr los tests**
 
 Run: `npm test`
-Expected: PASS (12 tests).
+Expected: PASS (13 tests).
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 9: Commit**
 
 ```bash
 git add -A
-git commit -m "feat: section heading y contadores animados compartidos
+git commit -m "feat: contenido editable en JSON y componentes compartidos
 
 Co-Authored-By: Claude Code <noreply@anthropic.com>"
 ```
@@ -2363,8 +2421,13 @@ npm test           # vitest
 
 ## Editar contenido
 
-Todo el contenido vive en `src/data/content.js`. Las cifras marcadas con
-`// CIFRAS POR CONFIRMAR` son placeholders: reemplácelas con los datos reales.
+Todos los textos del sitio viven en UN solo archivo: `src/data/contenido.json`
+(texto plano en JSON, legible y editable sin conocimientos de código). Para
+cambiar cualquier texto — menú, copyright, secciones, formulario — edite ese
+archivo, guarde y haga push: Cloudflare reconstruye y publica el cambio
+automáticamente. La clave `_notas` dentro del JSON explica qué cifras son
+placeholders por confirmar. Si el JSON queda mal formado, el build falla y el
+sitio publicado sigue intacto.
 
 ## Formulario de contacto (Zoho Forms)
 
@@ -2395,7 +2458,7 @@ Todo el contenido vive en `src/data/content.js`. Las cifras marcadas con
 
 - `src/pages/` — una por ruta (Home, Nosotros, Servicios, Contacto)
 - `src/components/` — componentes reutilizables y por área (home/, contact/)
-- `src/data/content.js` — todos los textos del sitio
+- `src/data/contenido.json` — todos los textos del sitio (archivo editable); `content.js` solo lo re-exporta
 - `src/hooks/useZohoForm.js` — lógica de envío del formulario
 - `public/assets/` — imágenes de marca
 ```

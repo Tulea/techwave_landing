@@ -3,6 +3,7 @@ dist/
 .env
 .env.local
 *.local
+.superpowers/
 
 # Materiales internos de marca (no van al repositorio ni a GitHub)
 Firmas/

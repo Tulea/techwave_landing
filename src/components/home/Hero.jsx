@@ -4,7 +4,7 @@ import { hero } from '../../data/content.js'
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
-      <div className="container-site grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-2">
+      <div className="container-site grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1fr_1.15fr]">
         <div>
           <p className="eyebrow">{hero.eyebrow}</p>
           <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-brand-900 sm:text-5xl">

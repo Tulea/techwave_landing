@@ -247,6 +247,9 @@
   "testimonials": {
     "eyebrow": "Testimonios",
     "title": "Lo que dicen nuestros clientes",
+    "prevLabel": "Testimonio anterior",
+    "nextLabel": "Testimonio siguiente",
+    "dotLabel": "Ir al testimonio",
     "items": [
       {
         "quote": "Techwave nos ayudó a optimizar políticas de dominio y mejorar aspectos de seguridad en nuestra infraestructura tecnológica. Su equipo está bien informado y es profesional, y recomendamos sus servicios.",

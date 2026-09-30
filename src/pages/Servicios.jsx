@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { services, proteja } from '../data/content.js'
+import { services, servicesPage, proteja } from '../data/content.js'
 import SectionHeading from '../components/SectionHeading.jsx'
 
 export default function Servicios() {
@@ -8,10 +8,11 @@ export default function Servicios() {
       <section className="bg-gradient-to-b from-brand-50 to-white py-16 sm:py-20">
         <div className="container-site">
           <SectionHeading
-            eyebrow="Nuestros servicios"
-            title="Soluciones integrales para su operación"
-            intro="Cuatro líneas de servicio que cubren su tecnología de punta a punta: desde la planeación hasta la protección."
+            eyebrow={servicesPage.eyebrow}
+            title={servicesPage.title}
+            intro={servicesPage.intro}
             align="left"
+            as="h1"
           />
         </div>
       </section>
@@ -39,7 +40,7 @@ export default function Servicios() {
                   ))}
                 </ul>
                 <Link to="/contacto" className="btn-primary mt-8">
-                  Solicitar cotización
+                  {servicesPage.cta}
                 </Link>
               </div>
               <div className="rounded-3xl bg-gradient-to-br from-brand-100 to-brand-50 p-1">
@@ -65,8 +66,8 @@ export default function Servicios() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link to="/contacto" className="btn-primary bg-accent-500 hover:bg-accent-600">
-              Hablemos de su estrategia de respaldo
+            <Link to={proteja.cta.to} className="btn-primary bg-accent-500 hover:bg-accent-600">
+              {proteja.cta.label}
             </Link>
           </div>
         </div>

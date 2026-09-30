@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { nav } from '../data/content.js'
+import { nav, site } from '../data/content.js'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <nav className="container-site flex h-16 items-center justify-between" aria-label="Principal">
+      <nav className="container-site flex h-16 items-center justify-between" aria-label={nav.ariaLabel}>
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <img src="/assets/logo.png" alt="" className="h-9 w-9 rounded-md object-contain" />
           <span className="text-lg font-bold tracking-tight text-brand-800">
-            TechWave<span className="text-accent-500">.</span>
+            {site.brandText}<span className="text-accent-500">.</span>
           </span>
         </Link>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
           onClick={() => setOpen((v) => !v)}
           className="inline-flex h-10 w-10 items-center justify-center rounded-md text-brand-800 hover:bg-brand-50 md:hidden"
           aria-expanded={open}
-          aria-label="Abrir menú"
+          aria-label={open ? nav.menuClose : nav.menuOpen}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
             {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}

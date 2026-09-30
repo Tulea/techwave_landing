@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import Counters from './Counters.jsx'
+import { counters } from '../data/content.js'
 
 // jsdom no implementa IntersectionObserver: se mockea como inView=true de inmediato.
 class MockObserver {
@@ -23,9 +24,8 @@ afterAll(() => {
 describe('Counters', () => {
   it('renderiza los 4 contadores con sus etiquetas', () => {
     render(<Counters />)
-    expect(screen.getByText('Años de experiencia')).toBeInTheDocument()
-    expect(screen.getByText('Clientes atendidos')).toBeInTheDocument()
-    expect(screen.getByText('Líneas de servicio')).toBeInTheDocument()
-    expect(screen.getByText('Disponibilidad de soporte')).toBeInTheDocument()
+    counters.items.forEach((c) => {
+      expect(screen.getByText(c.label)).toBeInTheDocument()
+    })
   })
 })

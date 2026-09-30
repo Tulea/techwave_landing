@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { site, nav, services } from '../data/content.js'
+import { site, nav, services, footer } from '../data/content.js'
 
 export default function Footer() {
   return (
@@ -9,14 +9,14 @@ export default function Footer() {
           <div className="flex items-center gap-2.5">
             <img src="/assets/logo.png" alt="" className="h-9 w-9 rounded-md object-contain" />
             <span className="text-lg font-bold text-white">
-              TechWave<span className="text-accent-400">.</span>
+              {site.brandText}<span className="text-accent-400">.</span>
             </span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-slate-400">{site.tagline}</p>
         </div>
 
-        <nav aria-label="Enlaces">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Enlaces</h3>
+        <nav aria-label={footer.links}>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">{footer.links}</h3>
           <ul className="mt-4 space-y-2 text-sm">
             {nav.items.map((item) => (
               <li key={item.to}>
@@ -28,8 +28,8 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Servicios">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Servicios</h3>
+        <nav aria-label={footer.services}>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">{footer.services}</h3>
           <ul className="mt-4 space-y-2 text-sm">
             {services.map((s) => (
               <li key={s.slug}>
@@ -42,7 +42,7 @@ export default function Footer() {
         </nav>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contacto</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">{footer.contact}</h3>
           <ul className="mt-4 space-y-2 text-sm text-slate-400">
             <li>{site.address}</li>
             <li>
@@ -60,7 +60,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10">
         <p className="container-site py-5 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} {site.name}. Todos los derechos reservados.
+          © {new Date().getFullYear()} {site.name}. {footer.rights}
         </p>
       </div>
     </footer>

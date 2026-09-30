@@ -4,7 +4,7 @@ export default function ContactInfo() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold text-brand-900">Información de contacto</h2>
+        <h2 className="text-xl font-bold text-brand-900">{contact.infoHeading}</h2>
         <p className="mt-3 text-slate-600">{contact.body}</p>
       </div>
       <ul className="space-y-4 text-sm">
@@ -27,7 +27,7 @@ export default function ContactInfo() {
       </ul>
       <div className="overflow-hidden rounded-2xl border border-slate-200">
         <iframe
-          title="Ubicación de TechWave IT Services"
+          title={contact.mapTitle}
           src={contact.mapEmbed}
           className="h-64 w-full"
           loading="lazy"

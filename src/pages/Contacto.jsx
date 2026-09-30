@@ -7,7 +7,7 @@ export default function Contacto() {
   return (
     <section className="section">
       <div className="container-site">
-        <SectionHeading eyebrow={contact.eyebrow} title={contact.title} align="left" />
+        <SectionHeading eyebrow={contact.eyebrow} title={contact.title} align="left" as="h1" />
         <div className="mt-12 grid gap-12 lg:grid-cols-2">
           <ContactForm />
           <ContactInfo />

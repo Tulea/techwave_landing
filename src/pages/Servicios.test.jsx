@@ -16,13 +16,14 @@ describe('Servicios', () => {
     })
   })
 
-  it('muestra Veeam y Sophos', () => {
+  it('muestra las soluciones de respaldo', () => {
     render(
       <MemoryRouter>
         <Servicios />
       </MemoryRouter>,
     )
-    expect(screen.getByRole('heading', { name: 'Veeam' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Sophos' })).toBeInTheDocument()
+    proteja.solutions.forEach((sol) => {
+      expect(screen.getByRole('heading', { name: sol.name })).toBeInTheDocument()
+    })
   })
 })

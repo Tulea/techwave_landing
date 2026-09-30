@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { services } from '../../data/content.js'
+import { services, serviceCards } from '../../data/content.js'
 import SectionHeading from '../SectionHeading.jsx'
 
 const icons = {
@@ -21,7 +21,7 @@ export default function ServiceCards() {
   return (
     <section className="section">
       <div className="container-site">
-        <SectionHeading eyebrow="Nuestros servicios" title="Cuatro líneas de servicio, un solo aliado" />
+        <SectionHeading eyebrow={serviceCards.eyebrow} title={serviceCards.title} />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <article
@@ -44,7 +44,7 @@ export default function ServiceCards() {
                 ))}
               </ul>
               <Link to="/servicios" className="mt-auto pt-5 text-sm font-semibold text-brand-800 transition group-hover:text-accent-600">
-                Ver más →
+                {serviceCards.linkLabel}
               </Link>
             </article>
           ))}

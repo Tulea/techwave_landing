@@ -7,7 +7,7 @@ export default function Nosotros() {
     <>
       <section className="bg-gradient-to-b from-brand-50 to-white py-16 sm:py-20">
         <div className="container-site">
-          <SectionHeading eyebrow={about.eyebrow} title={about.title} align="left" />
+          <SectionHeading eyebrow={about.eyebrow} title={about.title} align="left" as="h1" />
         </div>
       </section>
 
@@ -20,11 +20,11 @@ export default function Nosotros() {
           </div>
           <div className="grid content-start gap-6">
             <article className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-              <h2 className="text-lg font-bold text-brand-800">Misión</h2>
+              <h2 className="text-lg font-bold text-brand-800">{about.missionTitle}</h2>
               <p className="mt-3 leading-relaxed text-slate-600">{about.mission}</p>
             </article>
             <article className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-              <h2 className="text-lg font-bold text-brand-800">Visión</h2>
+              <h2 className="text-lg font-bold text-brand-800">{about.visionTitle}</h2>
               <p className="mt-3 leading-relaxed text-slate-600">{about.vision}</p>
             </article>
           </div>
@@ -33,7 +33,7 @@ export default function Nosotros() {
 
       <section className="section bg-brand-50/60">
         <div className="container-site">
-          <SectionHeading eyebrow="Valores" title="Lo que nos guía" />
+          <SectionHeading eyebrow={about.valuesSection.eyebrow} title={about.valuesSection.title} />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {about.values.map((v) => (
               <article key={v.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">

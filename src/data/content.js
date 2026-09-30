@@ -1,3 +1,4 @@
+// TODOS los textos del sitio viven en ./contenido.json — este archivo solo los re-exporta.
 import contenido from './contenido.json'
 
 export const {
@@ -8,6 +9,8 @@ export const {
   aboutBrief,
   painPoints,
   services,
+  serviceCards,
+  servicesPage,
   proteja,
   allies,
   counters,
@@ -15,4 +18,6 @@ export const {
   finalCta,
   about,
   contact,
+  footer,
+  notFound,
 } = contenido

@@ -1,6 +1,7 @@
 {
   "site": {
     "name": "TechWave IT Services",
+    "brandText": "TechWave",
     "tagline": "Empresas protegidas, operación sin interrupciones.",
     "phone": "+506 7128-7960",
     "email": "info@techwaveitservices.com",
@@ -25,7 +26,10 @@
         "to": "/contacto"
       }
     ],
-    "cta": "Assessment gratis"
+    "cta": "Assessment gratis",
+    "ariaLabel": "Principal",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
   },
   "hero": {
     "eyebrow": "Tecnología · Infraestructura · Consultoría · Ciberseguridad",
@@ -39,6 +43,7 @@
       "label": "Contáctenos",
       "to": "/contacto"
     },
+    "imageAlt": "Identidad visual de TechWave IT Services",
     "stats": [
       {
         "value": 5,
@@ -149,6 +154,17 @@
       ]
     }
   ],
+  "serviceCards": {
+    "eyebrow": "Nuestros servicios",
+    "title": "Cuatro líneas de servicio, un solo aliado",
+    "linkLabel": "Ver más →"
+  },
+  "servicesPage": {
+    "eyebrow": "Nuestros servicios",
+    "title": "Soluciones integrales para su operación",
+    "intro": "Cuatro líneas de servicio que cubren su tecnología de punta a punta: desde la planeación hasta la protección.",
+    "cta": "Solicitar cotización"
+  },
   "proteja": {
     "eyebrow": "Proteja sus datos",
     "title": "Soluciones de clase mundial para proteger su información",
@@ -240,8 +256,14 @@
       "TechWave IT Services nace con un propósito claro: acompañar a las empresas costarricenses en la adopción y administración de su tecnología. Creemos que la tecnología debe ser un habilitador del negocio, no un dolor de cabeza.",
       "Nos especializamos en cuatro áreas: tecnología, infraestructura, consultoría y ciberseguridad. Este enfoque nos permite ofrecer soluciones integrales, con la cercanía de un socio local y los estándares de los fabricantes líderes a nivel mundial."
     ],
+    "missionTitle": "Misión",
     "mission": "Brindar soluciones de tecnología, infraestructura, consultoría y ciberseguridad que permitan a nuestros clientes operar con confianza, protegiendo su información y optimizando sus recursos.",
+    "visionTitle": "Visión",
     "vision": "Ser el aliado estratégico de tecnología de referencia para las empresas de Costa Rica, reconocido por la calidad de nuestro servicio y la solidez de nuestras soluciones.",
+    "valuesSection": {
+      "eyebrow": "Valores",
+      "title": "Lo que nos guía"
+    },
     "values": [
       {
         "name": "Compromiso",
@@ -273,6 +295,8 @@
     "eyebrow": "Contacto",
     "title": "Hablemos de su proyecto",
     "body": "Complete el formulario y le responderemos a la brevedad. Si prefiere, llámenos o escríbanos directamente.",
+    "infoHeading": "Información de contacto",
+    "mapTitle": "Ubicación de TechWave IT Services",
     "services": [
       "Tecnología",
       "Infraestructura",
@@ -299,17 +323,39 @@
       },
       "service": {
         "label": "Servicio de interés",
-        "required": false
+        "required": false,
+        "placeholder": "Seleccione una opción"
       },
       "message": {
         "label": "Mensaje",
         "required": true
-      }
+      },
+      "errors": {
+        "firstName": "Ingrese su nombre",
+        "lastName": "Ingrese su apellido",
+        "emailRequired": "Ingrese su correo",
+        "emailInvalid": "Ingrese un correo válido",
+        "message": "Escriba su mensaje"
+      },
+      "submit": "Enviar",
+      "submitting": "Enviando…"
     },
     "success": "¡Gracias por enviar! Le contactaremos muy pronto.",
     "notConfigured": "El formulario aún no está configurado. Escríbanos directamente a info@techwaveitservices.com.",
     "error": "No se pudo enviar su mensaje. Inténtelo de nuevo o escríbanos a info@techwaveitservices.com.",
     "mapEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=-84.2200%2C10.0650%2C-84.2000%2C10.0800&layer=mapnik&marker=10.0725%2C-84.2100"
+  },
+  "footer": {
+    "links": "Enlaces",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Página no encontrada",
+    "body": "La página que busca no existe o fue movida.",
+    "cta": "Volver al inicio"
   },
   "_notas": {
     "fuenteUnica": "Este archivo es la única fuente de TODOS los textos del sitio: menú, CTA del navbar, hero, secciones, formulario y pie de página. Edite los textos aquí; no busque textos en el código.",

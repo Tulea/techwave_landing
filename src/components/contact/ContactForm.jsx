@@ -6,14 +6,14 @@ const initialValues = { firstName: '', lastName: '', email: '', phone: '', servi
 
 function validate(values) {
   const errors = {}
-  if (!values.firstName.trim()) errors.firstName = 'Ingrese su nombre'
-  if (!values.lastName.trim()) errors.lastName = 'Ingrese su apellido'
+  if (!values.firstName.trim()) errors.firstName = contact.form.errors.firstName
+  if (!values.lastName.trim()) errors.lastName = contact.form.errors.lastName
   if (!values.email.trim()) {
-    errors.email = 'Ingrese su correo'
+    errors.email = contact.form.errors.emailRequired
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    errors.email = 'Ingrese un correo válido'
+    errors.email = contact.form.errors.emailInvalid
   }
-  if (!values.message.trim()) errors.message = 'Escriba su mensaje'
+  if (!values.message.trim()) errors.message = contact.form.errors.message
   return errors
 }
 
@@ -133,7 +133,7 @@ export default function ContactForm() {
       </div>
       <Field name="service" label={contact.form.service.label} required={contact.form.service.required} errors={errors}>
         <select id="service" name="service" className={inputClass} value={values.service} onChange={onChange}>
-          <option value="">Seleccione una opción</option>
+          <option value="">{contact.form.service.placeholder}</option>
           {contact.services.map((s) => (
             <option key={s} value={s}>
               {s}
@@ -161,7 +161,7 @@ export default function ContactForm() {
       )}
 
       <button type="submit" disabled={status === 'loading'} className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60">
-        {status === 'loading' ? 'Enviando…' : 'Enviar'}
+        {status === 'loading' ? contact.form.submitting : contact.form.submit}
       </button>
     </form>
   )

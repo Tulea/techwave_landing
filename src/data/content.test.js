@@ -27,7 +27,7 @@ describe('content', () => {
   })
 
   it('no menciona servicios fuera de la oferta', () => {
-    const everything = JSON.stringify({ hero, services, painPoints, counters, contact })
+    const everything = JSON.stringify(contenido)
     expect(everything.toLowerCase()).not.toMatch(/desarrollo de software|gesti[oó]n de datos|soluciones en la nube/)
   })
 

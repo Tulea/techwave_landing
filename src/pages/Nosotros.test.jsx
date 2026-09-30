@@ -28,8 +28,8 @@ describe('Nosotros', () => {
         <Nosotros />
       </MemoryRouter>,
     )
-    expect(screen.getByText('Misión')).toBeInTheDocument()
-    expect(screen.getByText('Visión')).toBeInTheDocument()
+    expect(screen.getByText(about.missionTitle)).toBeInTheDocument()
+    expect(screen.getByText(about.visionTitle)).toBeInTheDocument()
     about.values.forEach((v) => {
       expect(screen.getByRole('heading', { name: v.name })).toBeInTheDocument()
     })

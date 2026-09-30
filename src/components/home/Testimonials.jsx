@@ -31,21 +31,25 @@ export default function Testimonials() {
         >
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-500"
+              className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${index * 100}%)` }}
             >
               {testimonials.items.map((t, i) => (
-                <figure
+                <div
                   key={t.author}
-                  aria-hidden={i !== index}
-                  className="w-full shrink-0 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+                  className="w-full shrink-0 px-4 py-1"
                 >
-                  <blockquote className="text-lg leading-relaxed text-slate-700">“{t.quote}”</blockquote>
-                  <figcaption className="mt-5 text-sm">
-                    <p className="font-semibold text-brand-900">{t.author}</p>
-                    <p className="text-slate-500">{[t.role, t.company].filter(Boolean).join(' · ')}</p>
-                  </figcaption>
-                </figure>
+                  <figure
+                    aria-hidden={i !== index}
+                    className="h-full rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+                  >
+                    <blockquote className="text-lg leading-relaxed text-slate-700">“{t.quote}”</blockquote>
+                    <figcaption className="mt-5 text-sm">
+                      <p className="font-semibold text-brand-900">{t.author}</p>
+                      <p className="text-slate-500">{[t.role, t.company].filter(Boolean).join(' · ')}</p>
+                    </figcaption>
+                  </figure>
+                </div>
               ))}
             </div>
           </div>
@@ -54,7 +58,7 @@ export default function Testimonials() {
               type="button"
               onClick={() => go(index - 1)}
               aria-label={testimonials.prevLabel}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-brand-800 shadow-sm transition hover:border-brand-800"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-800 text-white shadow-sm transition hover:bg-brand-700"
             >
               ←
             </button>
@@ -66,7 +70,7 @@ export default function Testimonials() {
                   onClick={() => go(i)}
                   aria-label={`${testimonials.dotLabel} ${i + 1}`}
                   aria-current={i === index}
-                  className={`h-2.5 rounded-full transition-all ${i === index ? 'w-6 bg-brand-800' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`}
+                  className={`h-2.5 rounded-full transition-all ${i === index ? 'w-6 bg-brand-800' : 'w-2.5 bg-brand-200 hover:bg-brand-300'}`}
                 />
               ))}
             </div>
@@ -74,7 +78,7 @@ export default function Testimonials() {
               type="button"
               onClick={() => go(index + 1)}
               aria-label={testimonials.nextLabel}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-brand-800 shadow-sm transition hover:border-brand-800"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-800 text-white shadow-sm transition hover:bg-brand-700"
             >
               →
             </button>

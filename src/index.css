@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-brand-50: #f4f2fb;
+  --color-brand-100: #e9e5f7;
+  --color-brand-200: #d3cbef;
+  --color-brand-300: #b3a6e0;
+  --color-brand-400: #8f7ccc;
+  --color-brand-500: #6f57b8;
+  --color-brand-600: #55439b;
+  --color-brand-700: #42347d;
+  --color-brand-800: #31285d;
+  --color-brand-900: #241c44;
+  --color-brand-950: #171130;
+
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-slate-800 antialiased;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand-800 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-800;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-brand-800/20 bg-white px-6 py-3 text-sm font-semibold text-brand-800 transition hover:bg-brand-50;
+  }
+  .btn-sm {
+    @apply px-4 py-2;
+  }
+  .section {
+    @apply py-16 sm:py-24;
+  }
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-widest text-accent-600;
+  }
+}

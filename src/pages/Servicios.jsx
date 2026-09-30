@@ -43,11 +43,11 @@ export default function Servicios() {
                   {servicesPage.cta.label}
                 </Link>
               </div>
-              <div className="overflow-hidden rounded-3xl border border-brand-100 shadow-sm">
+              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
                 <img
                   src={s.image}
                   alt={s.name}
-                  className="aspect-[4/3] w-full object-cover"
+                  className="max-h-full max-w-full rounded-xl object-contain"
                   loading="lazy"
                 />
               </div>

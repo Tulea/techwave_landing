@@ -11,13 +11,12 @@ function renderAt(path) {
 }
 
 describe('App routes', () => {
-  it.each([
-    ['/', 'Inicio'],
-    ['/nosotros', 'Nosotros'],
-    ['/servicios', 'Servicios'],
-    ['/contacto', 'Contacto'],
-  ])('renderiza %s', (path, heading) => {
-    renderAt(path)
-    expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument()
-  })
+  it.each(['/', '/nosotros', '/servicios', '/contacto'])(
+    'renderiza %s con el layout (navbar y footer)',
+    (path) => {
+      renderAt(path)
+      expect(screen.getByRole('navigation', { name: 'Principal' })).toBeInTheDocument()
+      expect(screen.getByText(/Todos los derechos reservados/)).toBeInTheDocument()
+    },
+  )
 })

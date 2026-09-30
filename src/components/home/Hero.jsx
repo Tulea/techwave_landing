@@ -33,13 +33,16 @@ export default function Hero() {
         </div>
         <div className="relative">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-accent-500/20 to-brand-500/20 blur-2xl" aria-hidden="true" />
-          <img
-            src="/assets/hero-image.png"
-            alt={hero.imageAlt}
-            className="relative w-full rounded-3xl border border-brand-100 object-cover shadow-xl"
-            width="512"
-            height="512"
-          />
+          <picture>
+            <source media="(min-width: 64rem)" srcSet="/assets/hero-image.png" />
+            <img
+              src="/assets/hero-mobile.png"
+              alt={hero.imageAlt}
+              className="relative w-full rounded-3xl border border-brand-100 object-cover shadow-xl"
+              width="512"
+              height="512"
+            />
+          </picture>
         </div>
       </div>
     </section>

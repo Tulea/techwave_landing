@@ -12,9 +12,7 @@ export default function Testimonials() {
               <blockquote className="text-lg leading-relaxed text-slate-700">“{t.quote}”</blockquote>
               <figcaption className="mt-5 text-sm">
                 <p className="font-semibold text-brand-900">{t.author}</p>
-                <p className="text-slate-500">
-                  {t.role} · {t.company}
-                </p>
+                <p className="text-slate-500">{[t.role, t.company].filter(Boolean).join(' · ')}</p>
               </figcaption>
             </figure>
           ))}

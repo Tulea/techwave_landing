@@ -249,10 +249,22 @@
     "title": "Lo que dicen nuestros clientes",
     "items": [
       {
-        "quote": "Su equipo está bien informado y es profesional. Nos acompañan con una infraestructura estable y segura.",
+        "quote": "Techwave nos ayudó a optimizar políticas de dominio y mejorar aspectos de seguridad en nuestra infraestructura tecnológica. Su equipo está bien informado y es profesional, y recomendamos sus servicios.",
         "author": "Salvador Hernández",
         "role": "Infraestructura",
         "company": "Vivibanco"
+      },
+      {
+        "quote": "Hemos estado trabajando con Techwave durante varios años y siempre nos ha impresionado su nivel de experiencia y compromiso con los proyectos gestionados.",
+        "author": "Jane López",
+        "role": "",
+        "company": "Universidad de Guatemala"
+      },
+      {
+        "quote": "Techwave nos brindó el apoyo y la orientación que necesitábamos para implementar un nuevo sistema de TI. Su equipo fue receptivo y profesional durante todo el proyecto.",
+        "author": "Jorge Higueros",
+        "role": "CEO",
+        "company": "Genezzight Corporación"
       }
     ]
   },

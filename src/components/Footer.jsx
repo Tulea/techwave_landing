@@ -4,8 +4,8 @@ import { site, nav, services, footer } from '../data/content.js'
 export default function Footer() {
   return (
     <footer className="bg-brand-950 text-slate-300">
-      <div className="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
+      <div className="container-site grid grid-cols-2 gap-10 py-14 lg:grid-cols-4">
+        <div className="col-span-2 lg:col-span-1">
           <div className="flex items-center gap-2.5">
             <img src="/assets/logo.png" alt="" className="h-9 w-9 rounded-md object-contain" />
             <span className="text-lg font-bold text-white">
@@ -41,7 +41,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <h3 className="text-sm font-semibold uppercase tracking-wider text-white">{footer.contact}</h3>
           <ul className="mt-4 space-y-2 text-sm text-slate-400">
             <li>{site.address}</li>

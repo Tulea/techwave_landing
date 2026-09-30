@@ -24,7 +24,7 @@
 - Cada tarea termina con su commit. Mensajes de commit terminan con:
   `Co-Authored-By: Claude Code <noreply@anthropic.com>`
 - Rutas relativas de assets: `/assets/...` (raíz pública).
-- Node >= 18 requerido (verificar con `node -v`).
+- Node >= 20.19 requerido (vite@7 lo exige). En esta máquina se usa Node portable v22.23.3: agregar `C:\Users\tulea\.local\node` al PATH de cada shell antes de los comandos npm/node (`$env:Path = "C:\Users\tulea\.local\node;" + $env:Path` en PowerShell; `export PATH="/c/Users/tulea/.local/node:$PATH"` en Git Bash).
 
 ---
 

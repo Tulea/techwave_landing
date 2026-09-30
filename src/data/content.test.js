@@ -1,4 +1,6 @@
 import { site, nav, hero, services, painPoints, counters, contact } from './content.js'
+import contenido from './contenido.json'
+import * as content from './content.js'
 
 describe('content', () => {
   it('tiene datos de contacto completos', () => {
@@ -30,6 +32,11 @@ describe('content', () => {
   })
 
   it('la navegación apunta a las 4 rutas', () => {
-    expect(nav.map((n) => n.to)).toEqual(['/', '/nosotros', '/servicios', '/contacto'])
+    expect(nav.items.map((n) => n.to)).toEqual(['/', '/nosotros', '/servicios', '/contacto'])
   })
+})
+
+it('contenido.json y content.js exponen exactamente las mismas claves de contenido', () => {
+  const jsonKeys = Object.keys(contenido).filter((k) => !k.startsWith('_'))
+  expect(jsonKeys.sort()).toEqual(Object.keys(content).sort())
 })

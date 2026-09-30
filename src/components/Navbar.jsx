@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { site, nav } from '../data/content.js'
+import { nav } from '../data/content.js'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -16,7 +16,7 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
-          {nav.map((item) => (
+          {nav.items.map((item) => (
             <li key={item.to}>
               <NavLink
                 to={item.to}
@@ -34,7 +34,7 @@ export default function Navbar() {
         </ul>
 
         <Link to="/contacto" className="btn-primary btn-sm hidden md:inline-flex">
-          Assessment gratis
+          {nav.cta}
         </Link>
 
         <button
@@ -53,7 +53,7 @@ export default function Navbar() {
       {open && (
         <div className="border-t border-slate-200 bg-white md:hidden">
           <ul className="container-site flex flex-col gap-1 py-3">
-            {nav.map((item) => (
+            {nav.items.map((item) => (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
@@ -71,7 +71,7 @@ export default function Navbar() {
             ))}
             <li>
               <Link to="/contacto" className="btn-primary mt-2 w-full" onClick={() => setOpen(false)}>
-                Assessment gratis
+                {nav.cta}
               </Link>
             </li>
           </ul>

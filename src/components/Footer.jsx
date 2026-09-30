@@ -18,7 +18,7 @@ export default function Footer() {
         <nav aria-label="Enlaces">
           <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Enlaces</h3>
           <ul className="mt-4 space-y-2 text-sm">
-            {nav.map((item) => (
+            {nav.items.map((item) => (
               <li key={item.to}>
                 <Link to={item.to} className="text-slate-400 transition hover:text-accent-400">
                   {item.label}

@@ -4,7 +4,7 @@ import { site, nav, services, footer } from '../data/content.js'
 export default function Footer() {
   return (
     <footer className="bg-brand-950 text-slate-300">
-      <div className="container-site grid grid-cols-2 gap-10 py-14 lg:grid-cols-4">
+      <div className="container-site grid grid-cols-2 gap-8 py-10 sm:gap-10 sm:py-14 lg:grid-cols-4">
         <div className="col-span-2 lg:col-span-1">
           <div className="flex items-center gap-2.5">
             <img src="/assets/logo.png" alt="" className="h-9 w-9 rounded-md object-contain" />
@@ -12,12 +12,12 @@ export default function Footer() {
               {site.brandText}<span className="text-accent-400">.</span>
             </span>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-slate-400">{site.tagline}</p>
+          <p className="mt-3 hidden text-sm leading-relaxed text-slate-400 sm:block">{site.tagline}</p>
         </div>
 
         <nav aria-label={footer.links}>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-white">{footer.links}</h3>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-3 space-y-1.5 text-sm">
             {nav.items.map((item) => (
               <li key={item.to}>
                 <Link to={item.to} className="text-slate-400 transition hover:text-accent-400">
@@ -30,7 +30,7 @@ export default function Footer() {
 
         <nav aria-label={footer.services}>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-white">{footer.services}</h3>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-3 space-y-1.5 text-sm">
             {services.map((s) => (
               <li key={s.slug}>
                 <Link to="/servicios" className="text-slate-400 transition hover:text-accent-400">
@@ -43,7 +43,7 @@ export default function Footer() {
 
         <div className="col-span-2 lg:col-span-1">
           <h3 className="text-sm font-semibold uppercase tracking-wider text-white">{footer.contact}</h3>
-          <ul className="mt-4 space-y-2 text-sm text-slate-400">
+          <ul className="mt-3 space-y-1.5 text-sm text-slate-400">
             <li>{site.address}</li>
             <li>
               <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`} className="transition hover:text-accent-400">
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <p className="container-site py-5 text-center text-xs text-slate-500">
+        <p className="container-site py-3 text-center text-xs text-slate-500">
           © {new Date().getFullYear()} {site.name}. {footer.rights}
         </p>
       </div>

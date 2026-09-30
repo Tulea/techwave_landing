@@ -43,10 +43,13 @@ export default function Servicios() {
                   {servicesPage.cta.label}
                 </Link>
               </div>
-              <div className="rounded-3xl bg-gradient-to-br from-brand-100 to-brand-50 p-1">
-                <div className="flex aspect-[4/3] items-center justify-center rounded-[calc(1.5rem-4px)] bg-brand-50">
-                  <img src="/assets/logo.png" alt="" className="h-24 w-24 rounded-xl object-contain opacity-80" />
-                </div>
+              <div className="overflow-hidden rounded-3xl border border-brand-100 shadow-sm">
+                <img
+                  src={s.image}
+                  alt={s.name}
+                  className="aspect-[4/3] w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </article>
           ))}

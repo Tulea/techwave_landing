@@ -118,6 +118,7 @@
     {
       "slug": "tecnologia",
       "name": "Tecnología",
+      "image": "/assets/tecnologia.png",
       "summary": "Soluciones tecnológicas a la medida de su operación: selección, implementación y administración de las herramientas que su equipo realmente aprovecha.",
       "features": [
         "Asesoría en adopción de tecnología",
@@ -128,6 +129,7 @@
     {
       "slug": "infraestructura",
       "name": "Infraestructura",
+      "image": "/assets/infraestructura.png",
       "summary": "Diseñamos, implementamos y administramos infraestructura escalable y confiable: redes, servidores, respaldos y continuidad del negocio.",
       "features": [
         "Diseño e implementación de redes",
@@ -138,6 +140,7 @@
     {
       "slug": "consultoria",
       "name": "Consultoría",
+      "image": "/assets/consultoria.png",
       "summary": "Decisiones de TI respaldadas por experiencia: evaluamos su operación actual y trazamos la ruta tecnológica correcta para alcanzar sus objetivos.",
       "features": [
         "Evaluación de infraestructura y seguridad",
@@ -148,6 +151,7 @@
     {
       "slug": "ciberseguridad",
       "name": "Ciberseguridad",
+      "image": "/assets/cyberseguridad.png",
       "summary": "Protección integral frente a amenazas: evaluaciones de vulnerabilidad, monitoreo y respuesta a incidentes, y concientización de usuarios.",
       "features": [
         "Evaluaciones de vulnerabilidad",

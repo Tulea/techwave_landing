@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.local
+*.local
+
+# Materiales internos de marca (no van al repositorio ni a GitHub)
+Firmas/
+Fondo de pantalla/
+Hoja membretada/
+Machote ppt/

@@ -195,8 +195,26 @@
     "eyebrow": "Alianzas",
     "title": "Trabajamos con fabricantes líderes del mercado",
     "items": [
-      "Veeam",
-      "Sophos"
+      {
+        "name": "Veeam",
+        "logo": "/assets/logos/Veeam.svg"
+      },
+      {
+        "name": "Sophos",
+        "logo": "/assets/logos/Sophos.svg"
+      },
+      {
+        "name": "Lumu",
+        "logo": "/assets/logos/Lumu.png"
+      },
+      {
+        "name": "Fortinet",
+        "logo": "/assets/logos/Fortinet.svg"
+      },
+      {
+        "name": "Cloudflare",
+        "logo": "/assets/logos/Cloudflare.svg"
+      }
     ],
     "note": "Alianzas estratégicas con fabricantes reconocidos a nivel mundial."
   },

@@ -17,6 +17,7 @@
 - Contenido en español, tono formal ("usted").
 - SIN sección de equipo, firmas ni nombres de personas (decisión explícita del usuario).
 - Paleta: morado `#31285d` (brand-800) como color principal, acento cyan `#06b6d4`. Tema claro. Tipografía Inter (Google Fonts).
+- Consistencia visual entre páginas (requisito explícito del usuario): las 4 páginas comparten el MISMO lenguaje visual — mismas tarjetas (`rounded-2xl border border-slate-200 shadow-sm`), mismo ritmo de secciones (`.section`), mismos botones (`btn-primary`/`btn-secondary`), mismos encabezados (`SectionHeading`), misma tipografía y paleta. Ninguna página introduce estilos propios fuera del sistema.
 - Marca: `./Logos/3.png` es la imagen principal (logo navbar + favicon + visual del hero). Los SVG de `./Sitio web` son complementarios.
 - Cifras del hero y contadores: usar los valores placeholder del contenido con el comentario `// CIFRAS POR CONFIRMAR` (el usuario aún no proporciona datos reales).
 - Formulario: URL del webhook en `VITE_ZOHO_FORM_URL` (`.env`), nunca hardcodeada.
@@ -2298,10 +2299,11 @@ Revisar en desktop (1280px) y móvil (375px, DevTools):
 5. `/ruta-falsa` — 404.
 6. Navegación móvil: abrir/cerrar menú hamburguesa en cada página.
 7. `src/App.jsx` ya no usa la función `Placeholder` y las 4 rutas apuntan a las páginas reales.
+8. **Consistencia entre páginas (requisito del usuario):** recorrer las 4 páginas lado a lado y verificar que comparten exactamente el mismo lenguaje visual: tarjetas (`rounded-2xl border border-slate-200 shadow-sm`), botones (`btn-primary`/`btn-secondary`), encabezados (`SectionHeading`), espaciado de secciones (`.section`), paleta (brand-800/cyan) y tipografía. Ninguna página con estilos propios divergentes.
 
 - [ ] **Step 2: Corregir hallazgos**
 
-Corregir cualquier desborde horizontal, texto cortado o espaciado roto encontrado en el paso 1. Verificar que ningún texto menciona servicios fuera de la oferta (desarrollo, datos, cloud independiente).
+Corregir cualquier desborde horizontal, texto cortado o espaciado roto encontrado en el paso 1, y unificar cualquier divergencia de estilo entre páginas encontrada en el punto 8 (debe ganar el sistema de diseño compartido: tokens, clases base, SectionHeading). Verificar que ningún texto menciona servicios fuera de la oferta (desarrollo, datos, cloud independiente).
 
 - [ ] **Step 3: Verificación de contraste y accesibilidad básica**
 

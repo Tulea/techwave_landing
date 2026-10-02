@@ -1,7 +1,8 @@
-import { aboutBrief } from '../../data/content.js'
+import { useContent } from '../../i18n.jsx'
 import SectionHeading from '../SectionHeading.jsx'
 
 export default function AboutBrief() {
+  const { aboutBrief } = useContent()
   return (
     <section className="section">
       <div className="container-site">

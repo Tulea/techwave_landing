@@ -1,10 +1,17 @@
 import { useState } from 'react'
 import { useZohoForm } from '../../hooks/useZohoForm.js'
-import { contact } from '../../data/content.js'
+import { useContent, dictionaries } from '../../i18n.jsx'
 
-const initialValues = { firstName: '', lastName: '', email: '', phone: '', service: '', message: '' }
+const initialValues = { firstName: '', lastName: '', email: '', phone: '', service: '', message: '', consent: false }
 
-function validate(values) {
+const serviceValues = dictionaries.es.contact.services
+
+function serviceFromUrl() {
+  const slug = new URLSearchParams(window.location.search).get('servicio')
+  return dictionaries.es.services.find((s) => s.slug === slug)?.name ?? ''
+}
+
+function validate(values, contact) {
   const errors = {}
   if (!values.firstName.trim()) errors.firstName = contact.form.errors.firstName
   if (!values.lastName.trim()) errors.lastName = contact.form.errors.lastName
@@ -14,14 +21,13 @@ function validate(values) {
     errors.email = contact.form.errors.emailInvalid
   }
   if (!values.message.trim()) errors.message = contact.form.errors.message
+  if (!values.consent) errors.consent = contact.form.consent.error
   return errors
 }
 
 const inputClass =
   'w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200'
 
-// Definida fuera del componente: definirla dentro haría que los inputs
-// pierdan el foco en cada tecla (React remonta el componente Field).
 function Field({ name, label, required, errors, children }) {
   return (
     <div>
@@ -40,19 +46,20 @@ function Field({ name, label, required, errors, children }) {
 }
 
 export default function ContactForm() {
-  const { status, error, submit } = useZohoForm()
-  const [values, setValues] = useState(initialValues)
+  const { contact } = useContent()
+  const { status, error, submit } = useZohoForm(contact)
+  const [values, setValues] = useState(() => ({ ...initialValues, service: serviceFromUrl() }))
   const [errors, setErrors] = useState({})
 
   const onChange = (e) => {
-    const { name, value } = e.target
-    setValues((v) => ({ ...v, [name]: value }))
+    const { name, value, type, checked } = e.target
+    setValues((v) => ({ ...v, [name]: type === 'checkbox' ? checked : value }))
     setErrors((err) => ({ ...err, [name]: undefined }))
   }
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    const v = validate(values)
+    const v = validate(values, contact)
     setErrors(v)
     if (Object.keys(v).length > 0) return
 
@@ -134,8 +141,8 @@ export default function ContactForm() {
       <Field name="service" label={contact.form.service.label} required={contact.form.service.required} errors={errors}>
         <select id="service" name="service" className={inputClass} value={values.service} onChange={onChange}>
           <option value="">{contact.form.service.placeholder}</option>
-          {contact.services.map((s) => (
-            <option key={s} value={s}>
+          {contact.services.map((s, i) => (
+            <option key={serviceValues[i]} value={serviceValues[i]}>
               {s}
             </option>
           ))}
@@ -153,6 +160,34 @@ export default function ContactForm() {
           aria-describedby={errors.message ? 'message-error' : undefined}
         />
       </Field>
+
+      <div>
+        <label className="flex items-start gap-3 text-sm text-slate-700">
+          <input
+            id="consent"
+            name="consent"
+            type="checkbox"
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 accent-brand-800"
+            checked={values.consent}
+            onChange={onChange}
+            aria-invalid={Boolean(errors.consent)}
+            aria-describedby={errors.consent ? 'consent-error' : undefined}
+          />
+          <span>
+            {contact.form.consent.labelBefore}
+            <a href="/privacidad" target="_blank" rel="noopener" className="font-medium text-brand-800 underline hover:text-accent-600">
+              {contact.form.consent.linkLabel}
+            </a>
+            {contact.form.consent.labelAfter}
+            <span className="text-red-500"> *</span>
+          </span>
+        </label>
+        {errors.consent && (
+          <p id="consent-error" className="mt-1 text-xs text-red-600">
+            {errors.consent}
+          </p>
+        )}
+      </div>
 
       {status === 'error' && (
         <p role="alert" className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">

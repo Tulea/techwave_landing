@@ -1,19 +1,17 @@
 import { useState } from 'react'
-import { contact } from '../data/content.js'
+import { contact as contactEs } from '../data/content.js'
 
 const getFormUrl = () => import.meta.env.VITE_ZOHO_FORM_URL ?? ''
 
-export function useZohoForm() {
+export function useZohoForm(messages = contactEs) {
   const [status, setStatus] = useState('idle')
   const [error, setError] = useState('')
 
   const submit = async (data) => {
-    // Se lee en cada envío (no al importar el módulo): permite probar con
-    // vi.stubEnv y que VITE_ZOHO_FORM_URL se tome del entorno en build.
     const formUrl = getFormUrl()
     if (!formUrl) {
       setStatus('error')
-      setError(contact.notConfigured)
+      setError(messages.notConfigured)
       return { ok: false }
     }
     setStatus('loading')
@@ -23,14 +21,14 @@ export function useZohoForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(data).toString(),
-        signal: AbortSignal.timeout(15000), // timeout de 15 s (spec §7)
+        signal: AbortSignal.timeout(15000),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       setStatus('success')
       return { ok: true }
     } catch {
       setStatus('error')
-      setError(contact.error)
+      setError(messages.error)
       return { ok: false }
     }
   }

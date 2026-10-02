@@ -1,0 +1,560 @@
+{
+  "site": {
+    "name": "TechWave IT Services",
+    "metaTitle": "TechWave IT Services — Technology, Infrastructure, Consulting and Cybersecurity",
+    "metaDescription": "TechWave IT Services: technology, infrastructure, consulting and cybersecurity solutions for businesses in Costa Rica. Your strategic IT partner.",
+    "brandText": "TechWave",
+    "tagline": "Protected businesses, uninterrupted operations.",
+    "phone": "+506 7128-7960",
+    "email": "info@techwaveitservices.com",
+    "address": "San José, Costa Rica",
+    "url": "https://www.techwaveitservices.com",
+    "ogImage": "/assets/hero-image.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com/company/techwave-it-services"
+    },
+    "whatsapp": {
+      "number": "50671287960",
+      "message": "Hi TechWave, I would like to receive information about your services.",
+      "label": "Message us on WhatsApp"
+    }
+  },
+  "nav": {
+    "items": [
+      {
+        "label": "Home",
+        "to": "/"
+      },
+      {
+        "label": "About us",
+        "to": "/nosotros"
+      },
+      {
+        "label": "Services",
+        "to": "/servicios"
+      },
+      {
+        "label": "Contact",
+        "to": "/contacto"
+      }
+    ],
+    "cta": "Free assessment",
+    "ariaLabel": "Main",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "Technology · Infrastructure · Consulting · Cybersecurity",
+    "title": "Technology that drives your business, security that protects it",
+    "subtitle": "At TechWave IT Services we design, implement and manage technology, infrastructure and cybersecurity solutions so that businesses in Costa Rica can operate with confidence.",
+    "primaryCta": {
+      "label": "Get a free assessment",
+      "to": "/contacto"
+    },
+    "secondaryCta": {
+      "label": "View services",
+      "to": "/servicios"
+    },
+    "imageAlt": "TechWave IT Services visual identity",
+    "stats": [
+      {
+        "value": 5,
+        "suffix": "+",
+        "label": "Years in business"
+      },
+      {
+        "value": 25,
+        "suffix": "+",
+        "label": "Clients served"
+      },
+      {
+        "value": 24,
+        "suffix": "/7",
+        "label": "Technical support"
+      }
+    ]
+  },
+  "aboutBrief": {
+    "eyebrow": "Who we are",
+    "title": "Your strategic technology partner",
+    "body": "We are a Costa Rican technology services company that supports our clients in adopting, operating and protecting their infrastructure. Our team combines technical knowledge, certifications from leading vendors and personalized service to deliver tailored solutions.",
+    "highlights": [
+      "Consultants with industry experience",
+      "Personalized service and fast response",
+      "Partnerships with leading vendors"
+    ]
+  },
+  "painPoints": {
+    "eyebrow": "Why it matters",
+    "title": "The risks your business faces today",
+    "intro": "Data from the industry's most recognized security studies.",
+    "sourceLabel": "Source",
+    "cards": [
+      {
+        "stat": "68%",
+        "title": "Of security breaches involve a human error",
+        "body": "One click on a phishing email or one wrong setting is enough. We train your staff and reduce your organization's attack surface.",
+        "source": "Verizon, Data Breach Investigations Report 2024",
+        "sourceUrl": "https://www.verizon.com/business/resources/reports/dbir/"
+      },
+      {
+        "stat": "59%",
+        "title": "Of organizations were hit by ransomware in the last year",
+        "body": "Ransomware does not care about size. We combine endpoint protection and reliable backups so an attack does not stop your operation.",
+        "source": "Sophos, State of Ransomware 2024",
+        "sourceUrl": "https://www.sophos.com/en-us/blog/the-state-of-ransomware-2024"
+      },
+      {
+        "stat": "258 days",
+        "title": "Is the average time to identify and contain a breach",
+        "body": "While nobody is watching, the attacker stays inside. Our monitoring detects suspicious activity and responds in time.",
+        "source": "IBM, Cost of a Data Breach Report 2024",
+        "sourceUrl": "https://www.ibm.com/reports/data-breach"
+      },
+      {
+        "stat": "US$4.88M",
+        "title": "Is the global average cost of a data breach",
+        "body": "Prevention is always cheaper than recovery. We design infrastructure with backups and disaster recovery to protect your business.",
+        "source": "IBM, Cost of a Data Breach Report 2024",
+        "sourceUrl": "https://www.ibm.com/reports/data-breach"
+      }
+    ]
+  },
+  "services": [
+    {
+      "slug": "tecnologia",
+      "name": "Technology",
+      "image": "/assets/tecnologia.webp",
+      "summary": "Technology solutions tailored to your operation: selecting, implementing and managing the tools your team actually uses.",
+      "features": [
+        "Technology adoption advisory",
+        "License and subscription management",
+        "Ongoing technical support"
+      ]
+    },
+    {
+      "slug": "infraestructura",
+      "name": "Infrastructure",
+      "image": "/assets/infraestructura.webp",
+      "summary": "We design, implement and manage scalable, reliable infrastructure: networks, servers, backups and business continuity.",
+      "features": [
+        "Network design and implementation",
+        "Server administration",
+        "Backup and disaster recovery"
+      ]
+    },
+    {
+      "slug": "consultoria",
+      "name": "Consulting",
+      "image": "/assets/consultoria.webp",
+      "summary": "IT decisions backed by experience: we assess your current operation and map out the right technology path to reach your goals.",
+      "features": [
+        "Infrastructure and security assessments",
+        "Strategic IT planning",
+        "Technology project support"
+      ]
+    },
+    {
+      "slug": "ciberseguridad",
+      "name": "Cybersecurity",
+      "image": "/assets/cyberseguridad.webp",
+      "summary": "Comprehensive protection against threats: vulnerability assessments, incident monitoring and response, and user awareness.",
+      "features": [
+        "Vulnerability assessments",
+        "Incident monitoring and response",
+        "Security awareness training"
+      ]
+    }
+  ],
+  "serviceCards": {
+    "eyebrow": "Our services",
+    "title": "Four service lines, one partner",
+    "linkLabel": "Learn more →"
+  },
+  "servicesPage": {
+    "eyebrow": "Our services",
+    "title": "End-to-end solutions for your operation",
+    "intro": "Four service lines that cover your technology from end to end: from planning to protection.",
+    "cta": {
+      "label": "Request a quote",
+      "to": "/contacto"
+    }
+  },
+  "proteja": {
+    "eyebrow": "Protect your data",
+    "title": "World-class solutions to protect your information",
+    "intro": "We work with five market-leading vendors to protect your company's most valuable asset, its data, on every front: devices, network, web and backups.",
+    "cta": {
+      "label": "Let's talk about protecting your business",
+      "to": "/contacto"
+    }
+  },
+  "allies": {
+    "eyebrow": "Partners",
+    "title": "We work with market-leading vendors",
+    "items": [
+      {
+        "name": "Sophos",
+        "logo": "/assets/logos/Sophos.svg",
+        "tag": "Endpoint and firewall",
+        "body": "Ransomware protection for computers and servers, next-generation firewalls, and managed detection and response."
+      },
+      {
+        "name": "Lumu",
+        "logo": "/assets/logos/Lumu.png",
+        "tag": "Compromise detection",
+        "body": "Continuous monitoring of network traffic to find out whether your organization is already compromised and act before it escalates."
+      },
+      {
+        "name": "Fortinet",
+        "logo": "/assets/logos/Fortinet.svg",
+        "tag": "Network security",
+        "body": "FortiGate firewalls, SD-WAN and secure remote access to protect and connect your sites and staff."
+      },
+      {
+        "name": "Cloudflare",
+        "logo": "/assets/logos/Cloudflare.svg",
+        "tag": "Web and Zero Trust",
+        "body": "Protection for websites and web apps against DDoS attacks and bots, fast DNS, and Zero Trust access for remote teams."
+      },
+      {
+        "name": "Veeam",
+        "logo": "/assets/logos/Veeam.svg",
+        "tag": "Backup and recovery",
+        "body": "Backups for servers, virtual machines, Microsoft 365 and cloud, with fast recovery from disasters or ransomware."
+      }
+    ],
+    "note": "Strategic partnerships with globally recognized vendors."
+  },
+  "counters": {
+    "eyebrow": "Track record",
+    "title": "Experience that speaks for itself",
+    "items": [
+      {
+        "value": 5,
+        "suffix": "+",
+        "label": "Years of experience"
+      },
+      {
+        "value": 25,
+        "suffix": "+",
+        "label": "Clients served"
+      },
+      {
+        "value": 5,
+        "suffix": "",
+        "label": "Technology partners"
+      },
+      {
+        "value": 24,
+        "suffix": "/7",
+        "label": "Support availability"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What our clients say",
+    "prevLabel": "Previous testimonial",
+    "nextLabel": "Next testimonial",
+    "dotLabel": "Go to testimonial",
+    "items": [
+      {
+        "quote": "Techwave helped us optimize domain policies and improve security aspects of our technology infrastructure. Their team is knowledgeable and professional, and we recommend their services.",
+        "author": "Salvador Hernández",
+        "role": "Infrastructure",
+        "company": "Vivibanco"
+      },
+      {
+        "quote": "Techwave gave us the support and guidance we needed to implement a new IT system. Their team was responsive and professional throughout the project.",
+        "author": "Jorge Higueros",
+        "role": "CEO",
+        "company": "Genezzight Corporación"
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Have an emergency or a project in mind?",
+    "body": "Tell us about your challenge and we will reply with a clear, no-obligation proposal.",
+    "buttons": [
+      {
+        "label": "Call us: +506 7128-7960",
+        "to": "tel:+50671287960",
+        "primary": false
+      },
+      {
+        "label": "Request an assessment",
+        "to": "/contacto",
+        "primary": true
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "A Costa Rican company dedicated to your technology",
+    "story": [
+      "TechWave IT Services was founded with a clear purpose: to help Costa Rican businesses adopt and manage their technology. We believe technology should enable the business, not be a headache.",
+      "We specialize in four areas: technology, infrastructure, consulting and cybersecurity. This focus allows us to deliver end-to-end solutions with the closeness of a local partner and the standards of the world's leading vendors."
+    ],
+    "missionTitle": "Mission",
+    "mission": "To provide technology, infrastructure, consulting and cybersecurity solutions that allow our clients to operate with confidence, protecting their information and optimizing their resources.",
+    "visionTitle": "Vision",
+    "vision": "To be the go-to strategic technology partner for businesses in Costa Rica, recognized for the quality of our service and the strength of our solutions.",
+    "valuesSection": {
+      "eyebrow": "Values",
+      "title": "What guides us"
+    },
+    "values": [
+      {
+        "name": "Commitment",
+        "body": "We take on our clients' challenges as our own."
+      },
+      {
+        "name": "Excellence",
+        "body": "We do the job right, to industry standards."
+      },
+      {
+        "name": "Trust",
+        "body": "We protect what our clients value most: their data."
+      },
+      {
+        "name": "Innovation",
+        "body": "We bring you the technologies that truly add value."
+      }
+    ],
+    "certifications": {
+      "eyebrow": "Certifications and partnerships",
+      "title": "Backed by leading vendors",
+      "intro": "We work hand in hand with globally recognized vendors. This is what we do with each of them:"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your project",
+    "body": "Fill out the form and we will get back to you shortly. If you prefer, call or email us directly.",
+    "infoHeading": "Contact information",
+    "services": [
+      "Technology",
+      "Infrastructure",
+      "Consulting",
+      "Cybersecurity",
+      "Other"
+    ],
+    "form": {
+      "firstName": {
+        "label": "First name",
+        "required": true
+      },
+      "lastName": {
+        "label": "Last name",
+        "required": true
+      },
+      "email": {
+        "label": "Email",
+        "required": true
+      },
+      "phone": {
+        "label": "Phone",
+        "required": false
+      },
+      "service": {
+        "label": "Service of interest",
+        "required": false,
+        "placeholder": "Select an option"
+      },
+      "message": {
+        "label": "Message",
+        "required": true
+      },
+      "errors": {
+        "firstName": "Enter your first name",
+        "lastName": "Enter your last name",
+        "emailRequired": "Enter your email",
+        "emailInvalid": "Enter a valid email",
+        "message": "Write your message"
+      },
+      "submit": "Send",
+      "submitting": "Sending…",
+      "consent": {
+        "labelBefore": "I accept the ",
+        "linkLabel": "privacy policy",
+        "labelAfter": " and authorize TechWave to contact me.",
+        "error": "You must accept the privacy policy"
+      }
+    },
+    "success": "Thank you for reaching out! We will contact you very soon.",
+    "notConfigured": "The form is not configured yet. Email us directly at info@techwaveitservices.com.",
+    "error": "Your message could not be sent. Please try again or email us at info@techwaveitservices.com."
+  },
+  "footer": {
+    "links": "Links",
+    "services": "Services",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy policy",
+    "social": "LinkedIn",
+    "careers": "Careers"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Page not found",
+    "body": "The page you are looking for does not exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "cases": {
+    "eyebrow": "Success stories",
+    "title": "Real results with real clients",
+    "challengeLabel": "Challenge",
+    "solutionLabel": "Solution",
+    "resultLabel": "Result",
+    "items": [
+      {
+        "client": "Vivibanco",
+        "industry": "Banking and finance",
+        "challenge": "Strengthen the security of its technology infrastructure and bring order to its domain policies.",
+        "solution": "Review and optimization of domain policies and improvement of the infrastructure's security configuration.",
+        "result": "A more secure infrastructure and consistent domain policies. The bank's infrastructure team recommends our services."
+      }
+    ]
+  },
+  "industries": {
+    "eyebrow": "Industries",
+    "title": "Experience in the sectors that drive the country",
+    "intro": "We understand the challenges, regulations and pace of each industry.",
+    "items": [
+      {
+        "slug": "banca",
+        "name": "Banking and finance",
+        "body": "Security, continuity and compliance for banks, credit unions and financial service providers."
+      },
+      {
+        "slug": "gobierno",
+        "name": "Government",
+        "body": "Secure, reliable and efficient systems that meet strict regulations and tight budgets."
+      },
+      {
+        "slug": "educacion",
+        "name": "Education",
+        "body": "Networks, platforms and data protection so students and teachers can learn without interruptions."
+      },
+      {
+        "slug": "energia",
+        "name": "Energy and utilities",
+        "body": "Protected, available critical infrastructure for operations that cannot stop."
+      },
+      {
+        "slug": "agricultura",
+        "name": "Agriculture",
+        "body": "Connectivity and technology that improve efficiency from the field to the supply chain."
+      },
+      {
+        "slug": "pymes",
+        "name": "Small and medium businesses",
+        "body": "Enterprise-grade protection within reach of small and medium businesses, without needing an in-house IT department."
+      }
+    ]
+  },
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy policy",
+    "updated": "Last updated: October 1, 2026",
+    "intro": "At TechWave IT Services we respect your privacy. This policy explains what personal data we collect through this site, what we use it for and what your rights are, in accordance with Costa Rica's Law No. 8968 on the Protection of Individuals Regarding the Processing of Their Personal Data.",
+    "sections": [
+      {
+        "title": "Data controller",
+        "body": "TechWave IT Services, located in San José, Costa Rica. Contact email: info@techwaveitservices.com."
+      },
+      {
+        "title": "Data we collect",
+        "body": "Only the data you voluntarily provide in the contact form: first name, last name, email, phone (optional), service of interest and message. We also collect anonymous, aggregated visit statistics, without cookies and without identifying individuals."
+      },
+      {
+        "title": "Purpose",
+        "body": "We use your data exclusively to answer your inquiry, prepare quotes and follow up commercially on our services. We do not sell or transfer your data to third parties for commercial purposes."
+      },
+      {
+        "title": "Storage and security",
+        "body": "Form messages are stored in Zoho Forms, a provider that applies technical and administrative security measures. We keep your data only as long as necessary for the stated purpose."
+      },
+      {
+        "title": "Your rights",
+        "body": "You may exercise your rights of access, rectification, cancellation and objection at any time by writing to info@techwaveitservices.com. We will respond within the time limits set by law."
+      },
+      {
+        "title": "Changes to this policy",
+        "body": "We may update this policy. The current version will always be published on this page with its update date."
+      }
+    ]
+  },
+  "seo": {
+    "home": {
+      "title": "TechWave IT Services — Technology, Infrastructure, Consulting and Cybersecurity",
+      "description": "TechWave IT Services: technology, infrastructure, consulting and cybersecurity solutions for businesses in Costa Rica. Your strategic IT partner."
+    },
+    "nosotros": {
+      "title": "About us — TechWave IT Services",
+      "description": "Meet TechWave IT Services: a Costa Rican technology, infrastructure, consulting and cybersecurity company, partner of Sophos, Fortinet, Lumu, Cloudflare and Veeam."
+    },
+    "servicios": {
+      "title": "IT and cybersecurity services — TechWave IT Services",
+      "description": "Technology, infrastructure, consulting and cybersecurity for businesses in Costa Rica: networks, servers, backups, monitoring and incident response."
+    },
+    "contacto": {
+      "title": "Contact — TechWave IT Services",
+      "description": "Request a free assessment or a quote. Call us at +506 7128-7960 or email info@techwaveitservices.com."
+    },
+    "privacidad": {
+      "title": "Privacy policy — TechWave IT Services",
+      "description": "How TechWave IT Services collects, uses and protects your personal data in accordance with Costa Rica's Law 8968."
+    },
+    "notFound": {
+      "title": "Page not found — TechWave IT Services",
+      "description": "The page you are looking for does not exist or has been moved."
+    },
+    "trabaja": {
+      "title": "Careers — TechWave IT Services",
+      "description": "Join TechWave IT Services: opportunities in technology, infrastructure, consulting and cybersecurity in Costa Rica."
+    }
+  },
+  "language": {
+    "switchToShort": "ES",
+    "switchAria": "Ver el sitio en español"
+  },
+  "careers": {
+    "eyebrow": "Careers",
+    "title": "Grow with a team that protects businesses",
+    "intro": "We are looking for people passionate about technology and cybersecurity who want to solve real challenges for businesses in Costa Rica.",
+    "areasTitle": "Areas we work in",
+    "openingsTitle": "Open positions",
+    "noOpenings": "We have no open positions right now, but we always want to meet talented people. Send us your resume using the form below.",
+    "applyLabel": "Apply",
+    "email": "info@techwaveitservices.com",
+    "openings": [],
+    "form": {
+      "title": "Apply",
+      "intro": "Fill out the form and attach your resume. We will review it and contact you if your profile matches an opportunity.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "position": "Position or area of interest",
+      "positionPlaceholder": "E.g.: Cybersecurity, technical support…",
+      "message": "Tell us about yourself",
+      "cv": "Resume (PDF or Word, max 5 MB)",
+      "errors": {
+        "firstName": "Enter your first name",
+        "lastName": "Enter your last name",
+        "emailRequired": "Enter your email",
+        "emailInvalid": "Enter a valid email",
+        "position": "Enter the position or area",
+        "cvRequired": "Attach your resume",
+        "cvType": "Your resume must be a PDF or Word file",
+        "cvSize": "Your resume cannot be larger than 5 MB"
+      },
+      "submit": "Submit application",
+      "submitting": "Sending…",
+      "success": "Thank you for applying! We received your resume and will contact you if your profile matches an opportunity.",
+      "notConfigured": "The form is not available yet. Send your resume to info@techwaveitservices.com."
+    }
+  }
+}

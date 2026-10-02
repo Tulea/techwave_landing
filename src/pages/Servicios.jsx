@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
-import { services, servicesPage, proteja } from '../data/content.js'
+import { useContent } from '../i18n.jsx'
+import { usePageMeta } from '../hooks/usePageMeta.js'
 import SectionHeading from '../components/SectionHeading.jsx'
+import Industries from '../components/Industries.jsx'
+import ProtejaSusDatos from '../components/ProtejaSusDatos.jsx'
 
 export default function Servicios() {
+  const { services, servicesPage } = useContent()
+  usePageMeta('servicios')
   return (
     <>
       <section className="bg-gradient-to-b from-brand-50 to-white py-16 sm:py-20">
@@ -23,7 +28,7 @@ export default function Servicios() {
             <article
               key={s.slug}
               id={s.slug}
-              className="grid items-center gap-10 lg:grid-cols-2"
+              className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-2"
             >
               <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
                 <p className="eyebrow">{`0${i + 1}`}</p>
@@ -39,7 +44,7 @@ export default function Servicios() {
                     </li>
                   ))}
                 </ul>
-                <Link to={servicesPage.cta.to} className="btn-primary mt-8">
+                <Link to={`${servicesPage.cta.to}?servicio=${s.slug}`} className="btn-primary mt-8">
                   {servicesPage.cta.label}
                 </Link>
               </div>
@@ -56,25 +61,9 @@ export default function Servicios() {
         </div>
       </section>
 
-      <section className="section bg-brand-900">
-        <div className="container-site">
-          <SectionHeading eyebrow={proteja.eyebrow} title={proteja.title} intro={proteja.intro} dark />
-          <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
-            {proteja.solutions.map((sol) => (
-              <article key={sol.name} className="rounded-2xl border border-white/10 bg-brand-800/60 p-8">
-                <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">{sol.tag}</p>
-                <h3 className="mt-2 text-2xl font-bold text-white">{sol.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-brand-200">{sol.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Link to={proteja.cta.to} className="btn-primary bg-accent-500 hover:bg-accent-600">
-              {proteja.cta.label}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Industries />
+
+      <ProtejaSusDatos />
     </>
   )
 }

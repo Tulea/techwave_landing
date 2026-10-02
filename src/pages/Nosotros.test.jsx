@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import Nosotros from './Nosotros.jsx'
-import { about } from '../data/content.js'
+import { about, allies } from '../data/content.js'
 import { mockIntersectionObserver } from '../test/mockIntersectionObserver.js'
 
 beforeAll(() => {
@@ -26,14 +26,16 @@ describe('Nosotros', () => {
     })
   })
 
-  it('muestra los 5 fabricantes de certificaciones y alianzas con su logo', () => {
+  it('muestra los 5 fabricantes con su logo y lo que hacemos con cada uno', () => {
     render(
       <MemoryRouter>
         <Nosotros />
       </MemoryRouter>,
     )
-    about.certifications.items.forEach((item) => {
+    expect(allies.items).toHaveLength(5)
+    allies.items.forEach((item) => {
       expect(screen.getByRole('img', { name: item.name })).toBeInTheDocument()
+      expect(screen.getByText(item.body)).toBeInTheDocument()
     })
   })
 })

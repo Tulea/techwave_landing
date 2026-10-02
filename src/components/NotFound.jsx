@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
-import { notFound } from '../data/content.js'
+import { useContent } from '../i18n.jsx'
+import { usePageMeta } from '../hooks/usePageMeta.js'
 
 export default function NotFound() {
+  const { notFound } = useContent()
+  usePageMeta('notFound', { noindex: true })
   return (
     <section className="section">
       <div className="container-site mx-auto max-w-2xl py-16 text-center">

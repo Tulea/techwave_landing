@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { testimonials } from '../../data/content.js'
+import { useContent } from '../../i18n.jsx'
 import SectionHeading from '../SectionHeading.jsx'
 
 const AUTOPLAY_MS = 6000
 
 export default function Testimonials() {
+  const { testimonials } = useContent()
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
   const count = testimonials.items.length

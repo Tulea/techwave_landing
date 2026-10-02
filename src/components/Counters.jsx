@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { counters } from '../data/content.js'
+import { useContent } from '../i18n.jsx'
 import SectionHeading from './SectionHeading.jsx'
 
 function useInView(ref) {
@@ -50,6 +50,7 @@ function Counter({ value, suffix = '', label, start }) {
 }
 
 export default function Counters() {
+  const { counters } = useContent()
   const ref = useRef(null)
   const inView = useInView(ref)
   return (

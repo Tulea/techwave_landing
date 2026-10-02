@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { services, serviceCards } from '../../data/content.js'
+import { useContent } from '../../i18n.jsx'
 import SectionHeading from '../SectionHeading.jsx'
 
 const icons = {
@@ -18,6 +18,7 @@ const icons = {
 }
 
 export default function ServiceCards() {
+  const { services, serviceCards } = useContent()
   return (
     <section className="section">
       <div className="container-site">
@@ -43,7 +44,7 @@ export default function ServiceCards() {
                   </li>
                 ))}
               </ul>
-              <Link to="/servicios" className="mt-auto pt-5 text-sm font-semibold text-brand-800 transition group-hover:text-accent-600">
+              <Link to={`/servicios#${s.slug}`} className="mt-auto pt-5 text-sm font-semibold text-brand-800 transition group-hover:text-accent-600">
                 {serviceCards.linkLabel}
               </Link>
             </article>

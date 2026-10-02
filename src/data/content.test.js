@@ -37,6 +37,6 @@ describe('content', () => {
 })
 
 it('contenido.json y content.js exponen exactamente las mismas claves de contenido', () => {
-  const jsonKeys = Object.keys(contenido).filter((k) => !k.startsWith('_'))
+  const jsonKeys = Object.keys(contenido)
   expect(jsonKeys.sort()).toEqual(Object.keys(content).sort())
 })

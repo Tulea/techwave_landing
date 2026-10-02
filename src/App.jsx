@@ -5,6 +5,8 @@ import Home from './pages/Home.jsx'
 import Nosotros from './pages/Nosotros.jsx'
 import Servicios from './pages/Servicios.jsx'
 import Contacto from './pages/Contacto.jsx'
+import Privacidad from './pages/Privacidad.jsx'
+import TrabajaConNosotros from './pages/TrabajaConNosotros.jsx'
 
 export default function App() {
   return (
@@ -14,6 +16,8 @@ export default function App() {
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/servicios" element={<Servicios />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/privacidad" element={<Privacidad />} />
+        <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotros />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

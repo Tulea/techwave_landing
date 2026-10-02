@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
-import { hero } from '../../data/content.js'
+import { useContent } from '../../i18n.jsx'
 
 export default function Hero() {
+  const { hero } = useContent()
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
       <div className="container-site grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1fr_1.15fr]">
@@ -31,12 +32,12 @@ export default function Hero() {
             ))}
           </dl>
         </div>
-        <div className="relative">
+        <div className="relative mx-auto w-full max-w-[15rem] sm:max-w-sm lg:max-w-none">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-accent-500/20 to-brand-500/20 blur-2xl" aria-hidden="true" />
           <picture>
-            <source media="(min-width: 64rem)" srcSet="/assets/hero-image.png" />
+            <source media="(min-width: 64rem)" srcSet="/assets/hero-image.webp" />
             <img
-              src="/assets/hero-mobile.png"
+              src="/assets/hero-mobile.webp"
               alt={hero.imageAlt}
               className="relative w-full rounded-3xl border border-brand-100 object-cover shadow-xl"
               width="512"

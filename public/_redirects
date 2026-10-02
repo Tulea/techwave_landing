@@ -1,1 +1,17 @@
-/* /index.html 200
+/about-3                               /nosotros    301
+/about                                 /nosotros    301
+/why-choose-us                         /nosotros    301
+/industries                            /servicios   301
+/prueba                                /servicios   301
+/copy-of-proteja-sus-datos-con-veeam   /servicios   301
+/sophos                                /servicios   301
+/cloud-solutions                       /servicios   301
+/managed-it-services                   /servicios   301
+/disaster-recovery                     /servicios   301
+/cloud-desktop                         /servicios   301
+/network-solutions                     /servicios   301
+/support-consulting                    /servicios   301
+/contact                               /contacto    301
+/contact-us                            /contacto    301
+
+/*  /index.html  200

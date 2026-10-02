@@ -7,7 +7,17 @@
     "tagline": "Empresas protegidas, operación sin interrupciones.",
     "phone": "+506 7128-7960",
     "email": "info@techwaveitservices.com",
-    "address": "San Rafael, Alajuela, Costa Rica"
+    "address": "San José, Costa Rica",
+    "url": "https://www.techwaveitservices.com",
+    "ogImage": "/assets/hero-image.png",
+    "social": {
+      "linkedin": "https://www.linkedin.com/company/techwave-it-services"
+    },
+    "whatsapp": {
+      "number": "50671287960",
+      "message": "Hola TechWave, me gustaría recibir información sobre sus servicios.",
+      "label": "Escríbanos por WhatsApp"
+    }
   },
   "nav": {
     "items": [
@@ -42,8 +52,8 @@
       "to": "/contacto"
     },
     "secondaryCta": {
-      "label": "Contáctenos",
-      "to": "/contacto"
+      "label": "Ver servicios",
+      "to": "/servicios"
     },
     "imageAlt": "Identidad visual de TechWave IT Services",
     "stats": [
@@ -58,26 +68,12 @@
         "label": "Clientes atendidos"
       },
       {
-        "value": 99,
-        "suffix": "%",
-        "label": "Disponibilidad de servicio"
+        "value": 24,
+        "suffix": "/7",
+        "label": "Soporte técnico"
       }
     ]
   },
-  "quickLinks": [
-    {
-      "label": "Assessment gratis",
-      "to": "/contacto"
-    },
-    {
-      "label": "Solicitar cotización",
-      "to": "/contacto"
-    },
-    {
-      "label": "Contáctenos",
-      "to": "/contacto"
-    }
-  ],
   "aboutBrief": {
     "eyebrow": "Quiénes somos",
     "title": "Su aliado estratégico en tecnología",
@@ -91,26 +87,36 @@
   "painPoints": {
     "eyebrow": "¿Por qué importa?",
     "title": "Los riesgos que su empresa enfrenta hoy",
+    "intro": "Datos de los estudios de seguridad más reconocidos de la industria.",
+    "sourceLabel": "Fuente",
     "cards": [
       {
-        "stat": "6 meses",
-        "title": "El tiempo que tarda en cerrar una PYME tras un ataque grave",
-        "body": "El 60 % de las pequeñas empresas que sufren un ciberataque serio cierran en menos de seis meses. Nuestro servicio administrado de ciberseguridad detecta y responde antes de que sea tarde."
+        "stat": "68 %",
+        "title": "De las brechas de seguridad involucra un error humano",
+        "body": "Un clic en un correo de phishing o una configuración equivocada bastan. Concientizamos a sus colaboradores y reducimos la superficie de riesgo de su organización.",
+        "source": "Verizon, Data Breach Investigations Report 2024",
+        "sourceUrl": "https://www.verizon.com/business/resources/reports/dbir/"
       },
       {
-        "stat": "80 %",
-        "title": "De las brechas de seguridad se deben a errores humanos",
-        "body": "La mayoría de los incidentes empieza con un clic equivocado. Concientizamos a sus colaboradores y reducimos la superficie de riesgo de su organización."
+        "stat": "59 %",
+        "title": "De las organizaciones sufrió un ataque de ransomware en el último año",
+        "body": "El ransomware no distingue tamaño. Combinamos protección de endpoints y respaldos confiables para que un ataque no detenga su operación.",
+        "source": "Sophos, State of Ransomware 2024",
+        "sourceUrl": "https://www.sophos.com/en-us/blog/the-state-of-ransomware-2024"
       },
       {
-        "stat": "43 %",
-        "title": "De los ciberataques se dirige a pequeñas y medianas empresas",
-        "body": "Los atacantes buscan el eslabón más débil. Le brindamos el nivel de protección que antes solo estaba al alcance de las grandes corporaciones."
+        "stat": "258 días",
+        "title": "Se tarda en promedio en identificar y contener una brecha",
+        "body": "Mientras nadie mira, el atacante sigue adentro. Nuestro monitoreo detecta actividad sospechosa y responde a tiempo.",
+        "source": "IBM, Cost of a Data Breach Report 2024",
+        "sourceUrl": "https://www.ibm.com/reports/data-breach"
       },
       {
-        "stat": "1 hora",
-        "title": "De caída puede costar miles de dólares en ventas perdidas",
-        "body": "La continuidad del negocio no es opcional. Diseñamos infraestructura con respaldos y recuperación ante desastres para que su operación nunca se detenga."
+        "stat": "US$4,88 M",
+        "title": "Es el costo promedio global de una brecha de datos",
+        "body": "Prevenir siempre sale más barato que recuperarse. Diseñamos infraestructura con respaldos y recuperación ante desastres para proteger su negocio.",
+        "source": "IBM, Cost of a Data Breach Report 2024",
+        "sourceUrl": "https://www.ibm.com/reports/data-breach"
       }
     ]
   },
@@ -118,7 +124,7 @@
     {
       "slug": "tecnologia",
       "name": "Tecnología",
-      "image": "/assets/tecnologia.png",
+      "image": "/assets/tecnologia.webp",
       "summary": "Soluciones tecnológicas a la medida de su operación: selección, implementación y administración de las herramientas que su equipo realmente aprovecha.",
       "features": [
         "Asesoría en adopción de tecnología",
@@ -129,7 +135,7 @@
     {
       "slug": "infraestructura",
       "name": "Infraestructura",
-      "image": "/assets/infraestructura.png",
+      "image": "/assets/infraestructura.webp",
       "summary": "Diseñamos, implementamos y administramos infraestructura escalable y confiable: redes, servidores, respaldos y continuidad del negocio.",
       "features": [
         "Diseño e implementación de redes",
@@ -140,7 +146,7 @@
     {
       "slug": "consultoria",
       "name": "Consultoría",
-      "image": "/assets/consultoria.png",
+      "image": "/assets/consultoria.webp",
       "summary": "Decisiones de TI respaldadas por experiencia: evaluamos su operación actual y trazamos la ruta tecnológica correcta para alcanzar sus objetivos.",
       "features": [
         "Evaluación de infraestructura y seguridad",
@@ -151,7 +157,7 @@
     {
       "slug": "ciberseguridad",
       "name": "Ciberseguridad",
-      "image": "/assets/cyberseguridad.png",
+      "image": "/assets/cyberseguridad.webp",
       "summary": "Protección integral frente a amenazas: evaluaciones de vulnerabilidad, monitoreo y respuesta a incidentes, y concientización de usuarios.",
       "features": [
         "Evaluaciones de vulnerabilidad",
@@ -177,21 +183,9 @@
   "proteja": {
     "eyebrow": "Proteja sus datos",
     "title": "Soluciones de clase mundial para proteger su información",
-    "intro": "Contamos con alianzas con fabricantes líderes del mercado para respaldar y proteger el activo más valioso de su empresa: sus datos.",
-    "solutions": [
-      {
-        "name": "Veeam",
-        "tag": "Respaldo y recuperación",
-        "body": "Respaldos confiables y recuperación ante desastres: sus datos siempre disponibles y recuperables, sin importar el incidente."
-      },
-      {
-        "name": "Sophos",
-        "tag": "Ciberseguridad",
-        "body": "Protección de endpoints y red contra ransomware y amenazas avanzadas, con detección y respuesta en tiempo real."
-      }
-    ],
+    "intro": "Trabajamos con cinco fabricantes líderes del mercado para proteger el activo más valioso de su empresa, sus datos, en cada frente: equipos, red, web y respaldos.",
     "cta": {
-      "label": "Hablemos de su estrategia de respaldo",
+      "label": "Hablemos de cómo proteger su empresa",
       "to": "/contacto"
     }
   },
@@ -201,23 +195,33 @@
     "items": [
       {
         "name": "Sophos",
-        "logo": "/assets/logos/Sophos.svg"
+        "logo": "/assets/logos/Sophos.svg",
+        "tag": "Endpoint y firewall",
+        "body": "Protección de equipos y servidores contra ransomware, firewalls de nueva generación y detección y respuesta administrada."
       },
       {
         "name": "Lumu",
-        "logo": "/assets/logos/Lumu.png"
+        "logo": "/assets/logos/Lumu.png",
+        "tag": "Detección de compromiso",
+        "body": "Monitoreo continuo del tráfico de red para descubrir si su organización ya está comprometida y actuar antes de que escale."
       },
       {
         "name": "Fortinet",
-        "logo": "/assets/logos/Fortinet.svg"
+        "logo": "/assets/logos/Fortinet.svg",
+        "tag": "Seguridad de red",
+        "body": "Firewalls FortiGate, SD-WAN y acceso remoto seguro para proteger y conectar sus sedes y colaboradores."
       },
       {
         "name": "Cloudflare",
-        "logo": "/assets/logos/Cloudflare.svg"
+        "logo": "/assets/logos/Cloudflare.svg",
+        "tag": "Web y Zero Trust",
+        "body": "Protección de sitios y aplicaciones web contra ataques DDoS y bots, DNS rápido y acceso Zero Trust para equipos remotos."
       },
       {
         "name": "Veeam",
-        "logo": "/assets/logos/Veeam.svg"
+        "logo": "/assets/logos/Veeam.svg",
+        "tag": "Respaldo y recuperación",
+        "body": "Respaldos de servidores, máquinas virtuales, Microsoft 365 y nube, con recuperación rápida ante desastres o ransomware."
       }
     ],
     "note": "Alianzas estratégicas con fabricantes reconocidos a nivel mundial."
@@ -237,9 +241,9 @@
         "label": "Clientes atendidos"
       },
       {
-        "value": 4,
+        "value": 5,
         "suffix": "",
-        "label": "Líneas de servicio"
+        "label": "Fabricantes aliados"
       },
       {
         "value": 24,
@@ -260,12 +264,6 @@
         "author": "Salvador Hernández",
         "role": "Infraestructura",
         "company": "Vivibanco"
-      },
-      {
-        "quote": "Hemos estado trabajando con Techwave durante varios años y siempre nos ha impresionado su nivel de experiencia y compromiso con los proyectos gestionados.",
-        "author": "Jane López",
-        "role": "",
-        "company": "Universidad de Guatemala"
       },
       {
         "quote": "Techwave nos brindó el apoyo y la orientación que necesitábamos para implementar un nuevo sistema de TI. Su equipo fue receptivo y profesional durante todo el proyecto.",
@@ -327,28 +325,7 @@
     "certifications": {
       "eyebrow": "Certificaciones y alianzas",
       "title": "Respaldados por fabricantes líderes",
-      "items": [
-        {
-          "name": "Sophos",
-          "logo": "/assets/logos/Sophos.svg"
-        },
-        {
-          "name": "Lumu",
-          "logo": "/assets/logos/Lumu.png"
-        },
-        {
-          "name": "Fortinet",
-          "logo": "/assets/logos/Fortinet.svg"
-        },
-        {
-          "name": "Cloudflare",
-          "logo": "/assets/logos/Cloudflare.svg"
-        },
-        {
-          "name": "Veeam",
-          "logo": "/assets/logos/Veeam.svg"
-        }
-      ]
+      "intro": "Trabajamos de la mano con fabricantes reconocidos a nivel mundial. Esto es lo que hacemos con cada uno:"
     }
   },
   "contact": {
@@ -356,7 +333,6 @@
     "title": "Hablemos de su proyecto",
     "body": "Complete el formulario y le responderemos a la brevedad. Si prefiere, llámenos o escríbanos directamente.",
     "infoHeading": "Información de contacto",
-    "mapTitle": "Ubicación de TechWave IT Services",
     "services": [
       "Tecnología",
       "Infraestructura",
@@ -398,18 +374,26 @@
         "message": "Escriba su mensaje"
       },
       "submit": "Enviar",
-      "submitting": "Enviando…"
+      "submitting": "Enviando…",
+      "consent": {
+        "labelBefore": "Acepto la ",
+        "linkLabel": "política de privacidad",
+        "labelAfter": " y autorizo a TechWave a contactarme.",
+        "error": "Debe aceptar la política de privacidad"
+      }
     },
     "success": "¡Gracias por enviar! Le contactaremos muy pronto.",
     "notConfigured": "El formulario aún no está configurado. Escríbanos directamente a info@techwaveitservices.com.",
-    "error": "No se pudo enviar su mensaje. Inténtelo de nuevo o escríbanos a info@techwaveitservices.com.",
-    "mapEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=-84.2200%2C10.0650%2C-84.2000%2C10.0800&layer=mapnik&marker=10.0725%2C-84.2100"
+    "error": "No se pudo enviar su mensaje. Inténtelo de nuevo o escríbanos a info@techwaveitservices.com."
   },
   "footer": {
     "links": "Enlaces",
     "services": "Servicios",
     "contact": "Contacto",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
+    "social": "LinkedIn",
+    "careers": "Trabaja con nosotros"
   },
   "notFound": {
     "eyebrow": "Error 404",
@@ -417,10 +401,160 @@
     "body": "La página que busca no existe o fue movida.",
     "cta": "Volver al inicio"
   },
-  "_notas": {
-    "fuenteUnica": "Este archivo es la única fuente de TODOS los textos del sitio: menú, CTA del navbar, hero, secciones, formulario y pie de página. Edite los textos aquí; no busque textos en el código.",
-    "comoEditar": "Para cambiar un texto: edítelo en este archivo, guárdelo y haga push al repositorio. Cloudflare reconstruye el sitio automáticamente y publica los cambios.",
-    "cifrasPorConfirmar": "Los números en «hero» → «stats» (años de operación, clientes atendidos y disponibilidad de servicio) y en «counters» → «items» (años de experiencia, clientes atendidos, líneas de servicio y disponibilidad de soporte) son placeholders pendientes de confirmar con los datos reales.",
-    "advertenciaJson": "Mantenga este archivo como JSON válido: respete las comas y las comillas. Si el archivo queda mal formado, el build fallará y el sitio publicado seguirá funcionando intacto."
+  "cases": {
+    "eyebrow": "Casos de éxito",
+    "title": "Resultados reales con clientes reales",
+    "challengeLabel": "Reto",
+    "solutionLabel": "Solución",
+    "resultLabel": "Resultado",
+    "items": [
+      {
+        "client": "Vivibanco",
+        "industry": "Banca y finanzas",
+        "challenge": "Fortalecer la seguridad de su infraestructura tecnológica y ordenar las políticas de dominio.",
+        "solution": "Revisión y optimización de las políticas de dominio y mejora de la configuración de seguridad de la infraestructura.",
+        "result": "Una infraestructura más segura y políticas de dominio consistentes. El equipo de infraestructura del banco recomienda nuestros servicios."
+      }
+    ]
+  },
+  "industries": {
+    "eyebrow": "Industrias",
+    "title": "Experiencia en los sectores que mueven al país",
+    "intro": "Entendemos los retos, regulaciones y ritmos de cada industria.",
+    "items": [
+      {
+        "slug": "banca",
+        "name": "Banca y finanzas",
+        "body": "Seguridad, continuidad y cumplimiento para bancos, cooperativas y proveedores de servicios financieros."
+      },
+      {
+        "slug": "gobierno",
+        "name": "Gobierno",
+        "body": "Sistemas seguros, confiables y eficientes que cumplen con regulaciones estrictas y presupuestos ajustados."
+      },
+      {
+        "slug": "educacion",
+        "name": "Educación",
+        "body": "Redes, plataformas y protección de datos para que estudiantes y docentes aprendan sin interrupciones."
+      },
+      {
+        "slug": "energia",
+        "name": "Energía y servicios públicos",
+        "body": "Infraestructura crítica protegida y disponible para operaciones que no pueden detenerse."
+      },
+      {
+        "slug": "agricultura",
+        "name": "Agricultura",
+        "body": "Conectividad y tecnología que mejoran la eficiencia desde el campo hasta la cadena de suministro."
+      },
+      {
+        "slug": "pymes",
+        "name": "PYMEs",
+        "body": "Protección de nivel corporativo al alcance de empresas pequeñas y medianas, sin necesitar un departamento de TI propio."
+      }
+    ]
+  },
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Política de privacidad",
+    "updated": "Última actualización: 1 de octubre de 2026",
+    "intro": "En TechWave IT Services respetamos su privacidad. Esta política explica qué datos personales recopilamos a través de este sitio, para qué los usamos y cuáles son sus derechos, conforme a la Ley N.° 8968 de Protección de la Persona frente al Tratamiento de sus Datos Personales de Costa Rica.",
+    "sections": [
+      {
+        "title": "Responsable del tratamiento",
+        "body": "TechWave IT Services, con domicilio en San José, Costa Rica. Correo de contacto: info@techwaveitservices.com."
+      },
+      {
+        "title": "Datos que recopilamos",
+        "body": "Únicamente los que usted nos proporciona voluntariamente en el formulario de contacto: nombre, apellido, correo electrónico, teléfono (opcional), servicio de interés y mensaje. Además, recopilamos estadísticas de visitas anónimas y agregadas, sin cookies y sin identificar a las personas."
+      },
+      {
+        "title": "Finalidad",
+        "body": "Usamos sus datos exclusivamente para responder su consulta, preparar cotizaciones y darle seguimiento comercial relacionado con nuestros servicios. No vendemos ni cedemos sus datos a terceros con fines comerciales."
+      },
+      {
+        "title": "Almacenamiento y seguridad",
+        "body": "Los mensajes del formulario se almacenan en Zoho Forms, un proveedor que aplica medidas de seguridad técnicas y administrativas. Conservamos sus datos solo mientras sean necesarios para la finalidad indicada."
+      },
+      {
+        "title": "Sus derechos",
+        "body": "Usted puede ejercer en cualquier momento sus derechos de acceso, rectificación, cancelación y oposición escribiendo a info@techwaveitservices.com. Responderemos en los plazos que establece la ley."
+      },
+      {
+        "title": "Cambios a esta política",
+        "body": "Podemos actualizar esta política. La versión vigente siempre estará publicada en esta página con su fecha de actualización."
+      }
+    ]
+  },
+  "seo": {
+    "home": {
+      "title": "TechWave IT Services — Tecnología, Infraestructura, Consultoría y Ciberseguridad",
+      "description": "TechWave IT Services: soluciones de tecnología, infraestructura, consultoría y ciberseguridad para empresas en Costa Rica. Su aliado estratégico en TI."
+    },
+    "nosotros": {
+      "title": "Nosotros — TechWave IT Services",
+      "description": "Conozca a TechWave IT Services: empresa costarricense de tecnología, infraestructura, consultoría y ciberseguridad, aliada de Sophos, Fortinet, Lumu, Cloudflare y Veeam."
+    },
+    "servicios": {
+      "title": "Servicios de TI y ciberseguridad — TechWave IT Services",
+      "description": "Tecnología, infraestructura, consultoría y ciberseguridad para empresas en Costa Rica: redes, servidores, respaldos, monitoreo y respuesta a incidentes."
+    },
+    "contacto": {
+      "title": "Contacto — TechWave IT Services",
+      "description": "Solicite un assessment gratis o una cotización. Llámenos al +506 7128-7960 o escríbanos a info@techwaveitservices.com."
+    },
+    "privacidad": {
+      "title": "Política de privacidad — TechWave IT Services",
+      "description": "Cómo TechWave IT Services recopila, usa y protege sus datos personales conforme a la Ley 8968 de Costa Rica."
+    },
+    "notFound": {
+      "title": "Página no encontrada — TechWave IT Services",
+      "description": "La página que busca no existe o fue movida."
+    },
+    "trabaja": {
+      "title": "Trabaja con nosotros — TechWave IT Services",
+      "description": "Únase a TechWave IT Services: oportunidades en tecnología, infraestructura, consultoría y ciberseguridad en Costa Rica."
+    }
+  },
+  "language": {
+    "switchToShort": "EN",
+    "switchAria": "Ver el sitio en inglés"
+  },
+  "careers": {
+    "eyebrow": "Trabaja con nosotros",
+    "title": "Crezca con un equipo que protege empresas",
+    "intro": "Buscamos personas apasionadas por la tecnología y la ciberseguridad que quieran resolver retos reales para empresas en Costa Rica.",
+    "areasTitle": "Áreas en las que trabajamos",
+    "openingsTitle": "Vacantes abiertas",
+    "noOpenings": "En este momento no tenemos vacantes publicadas, pero siempre queremos conocer talento. Envíenos su CV con el formulario de abajo.",
+    "applyLabel": "Aplicar",
+    "email": "info@techwaveitservices.com",
+    "openings": [],
+    "form": {
+      "title": "Postúlese",
+      "intro": "Complete el formulario y adjunte su CV. Lo revisaremos y le contactaremos si su perfil se ajusta a una oportunidad.",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "position": "Puesto o área de interés",
+      "positionPlaceholder": "Ej.: Ciberseguridad, soporte técnico…",
+      "message": "Cuéntenos sobre usted",
+      "cv": "CV (PDF o Word, máximo 5 MB)",
+      "errors": {
+        "firstName": "Ingrese su nombre",
+        "lastName": "Ingrese su apellido",
+        "emailRequired": "Ingrese su correo",
+        "emailInvalid": "Ingrese un correo válido",
+        "position": "Indique el puesto o área",
+        "cvRequired": "Adjunte su CV",
+        "cvType": "El CV debe ser PDF o Word",
+        "cvSize": "El CV no puede pesar más de 5 MB"
+      },
+      "submit": "Enviar postulación",
+      "submitting": "Enviando…",
+      "success": "¡Gracias por postularse! Recibimos su CV y le contactaremos si su perfil se ajusta a una oportunidad.",
+      "notConfigured": "El formulario aún no está disponible. Envíe su CV a info@techwaveitservices.com."
+    }
   }
 }

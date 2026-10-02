@@ -124,7 +124,7 @@
     {
       "slug": "tecnologia",
       "name": "Technology",
-      "image": "/assets/tecnologia.webp",
+      "image": "/assets/tecnologia.png",
       "summary": "Technology solutions tailored to your operation: selecting, implementing and managing the tools your team actually uses.",
       "features": [
         "Technology adoption advisory",
@@ -135,7 +135,7 @@
     {
       "slug": "infraestructura",
       "name": "Infrastructure",
-      "image": "/assets/infraestructura.webp",
+      "image": "/assets/infraestructura.png",
       "summary": "We design, implement and manage scalable, reliable infrastructure: networks, servers, backups and business continuity.",
       "features": [
         "Network design and implementation",
@@ -146,7 +146,7 @@
     {
       "slug": "consultoria",
       "name": "Consulting",
-      "image": "/assets/consultoria.webp",
+      "image": "/assets/consultoria.png",
       "summary": "IT decisions backed by experience: we assess your current operation and map out the right technology path to reach your goals.",
       "features": [
         "Infrastructure and security assessments",
@@ -157,7 +157,7 @@
     {
       "slug": "ciberseguridad",
       "name": "Cybersecurity",
-      "image": "/assets/cyberseguridad.webp",
+      "image": "/assets/cyberseguridad.png",
       "summary": "Comprehensive protection against threats: vulnerability assessments, incident monitoring and response, and user awareness.",
       "features": [
         "Vulnerability assessments",

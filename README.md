@@ -98,17 +98,23 @@ Add a site → copie el token y créelo en Cloudflare Pages como
    (CORS). Si el envío falla por CORS, use la opción de incrustar el formulario
    de Zoho en la página de contacto.
 
-## Despliegue en Cloudflare Pages (plan free) desde GitHub
+## Despliegue en Cloudflare (plan free) desde GitHub
 
-1. Suba este repositorio a GitHub (`git remote add origin ... && git push`).
-2. En Cloudflare: Workers & Pages → Create → Pages → Connect to Git.
-3. Seleccione el repositorio y configure:
-   - Build command: `npm run build`
-   - Build output directory: `dist`
-4. El archivo `public/_redirects` ya incluye el fallback SPA (`/* /index.html 200`).
-5. Deploy: cada push a la rama principal publica automáticamente.
-6. Dominio propio: en el proyecto, Custom domains → agregar
-   `techwaveitservices.com` y actualizar los DNS en el registrador.
+El sitio se publica como archivos estáticos (`dist`). Funciona tanto como
+Worker como en Pages:
+
+- **Workers** (Workers & Pages → Create → Import a repository): build command
+  `npm run build`, deploy command `npx wrangler deploy`. La configuración está
+  en `wrangler.jsonc` (sirve `dist` y resuelve las rutas de React).
+- **Pages** (Workers & Pages → Create → Pages → Connect to Git): build command
+  `npm run build`, output directory `dist`.
+
+Conecte el proyecto directamente al repositorio `Tulea/techwave_landing`
+(no a una copia) para que cada push a `main` publique automáticamente. Las
+redirecciones 301 del sitio anterior están en `public/_redirects`.
+
+Dominio propio: en el proyecto, Custom domains → agregar
+`techwaveitservices.com`.
 
 ## Estructura
 

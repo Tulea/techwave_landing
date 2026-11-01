@@ -401,22 +401,6 @@
     "body": "The page you are looking for does not exist or has been moved.",
     "cta": "Back to home"
   },
-  "cases": {
-    "eyebrow": "Success stories",
-    "title": "Real results with real clients",
-    "challengeLabel": "Challenge",
-    "solutionLabel": "Solution",
-    "resultLabel": "Result",
-    "items": [
-      {
-        "client": "Vivibanco",
-        "industry": "Banking and finance",
-        "challenge": "Strengthen the security of its technology infrastructure and bring order to its domain policies.",
-        "solution": "Review and optimization of domain policies and improvement of the infrastructure's security configuration.",
-        "result": "A more secure infrastructure and consistent domain policies. The bank's infrastructure team recommends our services."
-      }
-    ]
-  },
   "industries": {
     "eyebrow": "Industries",
     "title": "Experience in the sectors that drive the country",

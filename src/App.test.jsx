@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App.jsx'
-import { nav, footer, notFound, privacy, seo, site, painPoints, cases, industries, careers } from './data/content.js'
+import { nav, footer, notFound, privacy, seo, site, painPoints, industries, careers } from './data/content.js'
 import { mockIntersectionObserver } from './test/mockIntersectionObserver.js'
 
 function renderAt(path) {
@@ -80,16 +80,13 @@ describe('App routes', () => {
     )
   })
 
-  it('la portada cita la fuente de cada estadística y muestra los casos de éxito', () => {
+  it('la portada cita la fuente de cada estadística', () => {
     renderAt('/')
     painPoints.cards.forEach((c) => {
       expect(c.source).toBeTruthy()
       expect(c.sourceUrl).toMatch(/^https:\/\//)
     })
     expect(screen.getAllByRole('link', { name: painPoints.cards[0].source }).length).toBeGreaterThan(0)
-    cases.items.forEach((c) => {
-      expect(screen.getByRole('heading', { name: c.client })).toBeInTheDocument()
-    })
   })
 
   it('servicios incluye la sección de industrias', () => {

@@ -13,7 +13,6 @@ export const {
   allies,
   counters,
   testimonials,
-  cases,
   industries,
   finalCta,
   about,

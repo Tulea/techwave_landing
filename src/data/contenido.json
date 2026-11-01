@@ -401,22 +401,6 @@
     "body": "La página que busca no existe o fue movida.",
     "cta": "Volver al inicio"
   },
-  "cases": {
-    "eyebrow": "Casos de éxito",
-    "title": "Resultados reales con clientes reales",
-    "challengeLabel": "Reto",
-    "solutionLabel": "Solución",
-    "resultLabel": "Resultado",
-    "items": [
-      {
-        "client": "Vivibanco",
-        "industry": "Banca y finanzas",
-        "challenge": "Fortalecer la seguridad de su infraestructura tecnológica y ordenar las políticas de dominio.",
-        "solution": "Revisión y optimización de las políticas de dominio y mejora de la configuración de seguridad de la infraestructura.",
-        "result": "Una infraestructura más segura y políticas de dominio consistentes. El equipo de infraestructura del banco recomienda nuestros servicios."
-      }
-    ]
-  },
   "industries": {
     "eyebrow": "Industrias",
     "title": "Experiencia en los sectores que mueven al país",

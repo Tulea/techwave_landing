@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, act } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App.jsx'
-import { nav, footer, notFound, privacy, seo, site, painPoints, industries, careers, contact } from './data/content.js'
+import { nav, footer, notFound, privacy, seo, site, painPoints, industries, careers, contact, servicesPage, hero } from './data/content.js'
+import { REDIRECT_DELAY_MS } from './hooks/useRedirectAfter.js'
 import { mockIntersectionObserver } from './test/mockIntersectionObserver.js'
 
 function renderAt(path) {
@@ -69,12 +70,29 @@ describe('App routes', () => {
 
   it('muestra la confirmación cuando Zoho redirige con enviado=1', () => {
     renderAt('/trabaja-con-nosotros?enviado=1')
-    expect(screen.getByRole('status')).toHaveTextContent(careers.form.success)
+    expect(screen.getByRole('status')).toHaveTextContent(careers.form.success.title)
   })
 
   it('muestra la confirmación de contacto cuando Zoho redirige con enviado=1', () => {
     renderAt('/contacto?enviado=1')
-    expect(screen.getByRole('status')).toHaveTextContent(contact.success)
+    expect(screen.getByRole('status')).toHaveTextContent(contact.success.title)
+  })
+
+  it.each([
+    ['/contacto?enviado=1', 'servicios', servicesPage.title],
+    ['/trabaja-con-nosotros?enviado=1', 'inicio', hero.title],
+  ])('tras la confirmación de %s redirige a %s a los 10 segundos', (path, _destino, title) => {
+    vi.useFakeTimers()
+    try {
+      renderAt(path)
+      act(() => vi.advanceTimersByTime(REDIRECT_DELAY_MS - 1))
+      expect(screen.getByRole('status')).toBeInTheDocument()
+      act(() => vi.advanceTimersByTime(1))
+      expect(screen.queryByRole('status')).not.toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1, name: title })).toBeInTheDocument()
+    } finally {
+      vi.useRealTimers()
+    }
   })
 
   it('muestra el botón flotante de WhatsApp con el número y mensaje', () => {

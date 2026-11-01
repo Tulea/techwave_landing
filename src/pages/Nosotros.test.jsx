@@ -26,13 +26,13 @@ describe('Nosotros', () => {
     })
   })
 
-  it('muestra los 5 fabricantes con su logo y lo que hacemos con cada uno', () => {
+  it('muestra los 6 fabricantes con su logo y lo que hacemos con cada uno', () => {
     render(
       <MemoryRouter>
         <Nosotros />
       </MemoryRouter>,
     )
-    expect(allies.items).toHaveLength(5)
+    expect(allies.items).toHaveLength(6)
     allies.items.forEach((item) => {
       expect(screen.getByRole('img', { name: item.name })).toBeInTheDocument()
       expect(screen.getByText(item.body)).toBeInTheDocument()

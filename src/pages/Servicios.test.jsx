@@ -27,14 +27,14 @@ describe('Servicios', () => {
     expect(links.map((a) => a.getAttribute('href'))).toEqual(services.map((s) => `/contacto?servicio=${s.slug}`))
   })
 
-  it('proteja sus datos muestra los 5 fabricantes aliados con su logo', () => {
+  it('proteja sus datos muestra los 6 fabricantes aliados con su logo', () => {
     render(
       <MemoryRouter>
         <Servicios />
       </MemoryRouter>,
     )
     expect(screen.getByRole('heading', { name: proteja.title })).toBeInTheDocument()
-    expect(allies.items).toHaveLength(5)
+    expect(allies.items).toHaveLength(6)
     allies.items.forEach((ally) => {
       expect(screen.getByRole('heading', { name: ally.name })).toBeInTheDocument()
       expect(screen.getByRole('img', { name: ally.name })).toBeInTheDocument()

@@ -183,7 +183,7 @@
   "proteja": {
     "eyebrow": "Protect your data",
     "title": "World-class solutions to protect your information",
-    "intro": "We work with five market-leading vendors to protect your company's most valuable asset, its data, on every front: devices, network, web and backups.",
+    "intro": "We work with six market-leading vendors to protect your company's most valuable asset, its data, on every front: devices, network, web, applications and backups.",
     "cta": {
       "label": "Let's talk about protecting your business",
       "to": "/contacto"
@@ -222,6 +222,12 @@
         "logo": "/assets/logos/Veeam.svg",
         "tag": "Backup and recovery",
         "body": "Backups for servers, virtual machines, Microsoft 365 and cloud, with fast recovery from disasters or ransomware."
+      },
+      {
+        "name": "Checkmarx",
+        "logo": "/assets/logos/Checkmarx.svg",
+        "tag": "Application security",
+        "body": "Scanning of your applications' code and open-source libraries to find and fix vulnerabilities during development, before they reach production."
       }
     ],
     "note": "Strategic partnerships with globally recognized vendors."
@@ -241,7 +247,7 @@
         "label": "Clients served"
       },
       {
-        "value": 5,
+        "value": 6,
         "suffix": "",
         "label": "Technology partners"
       },
@@ -275,7 +281,7 @@
   },
   "finalCta": {
     "title": "Have an emergency or a project in mind?",
-    "body": "Tell us about your challenge and we will reply with a clear, no-obligation proposal.",
+    "body": "Tell us about your situation and we will reply within 24 hours with a clear, no-obligation proposal.",
     "buttons": [
       {
         "label": "Call us: +506 4300-4700",
@@ -384,7 +390,12 @@
         "error": "You must accept the privacy policy"
       }
     },
-    "success": "Thank you for reaching out! We will contact you very soon.",
+    "success": {
+      "title": "Thank you for contacting us!",
+      "subtitle": "We have received your message.",
+      "body": "Our team will review your inquiry and get back to you shortly to give you the support you need.",
+      "tagline": "Technology · Innovation · Trust"
+    },
     "notConfigured": "The form is not configured yet. Email us directly at info@techwaveitservices.com."
   },
   "footer": {
@@ -478,7 +489,7 @@
     },
     "nosotros": {
       "title": "About us — TechWave IT Services",
-      "description": "Meet TechWave IT Services: a Costa Rican technology, infrastructure, consulting and cybersecurity company, partner of Sophos, Fortinet, Lumu, Cloudflare and Veeam."
+      "description": "Meet TechWave IT Services: a Costa Rican technology, infrastructure, consulting and cybersecurity company, partner of Sophos, Fortinet, Lumu, Cloudflare, Veeam and Checkmarx."
     },
     "servicios": {
       "title": "IT and cybersecurity services — TechWave IT Services",
@@ -540,7 +551,12 @@
       },
       "submit": "Submit application",
       "submitting": "Sending…",
-      "success": "Thank you for applying! We received your resume and will contact you if your profile matches an opportunity.",
+      "success": {
+        "title": "Application received!",
+        "subtitle": "Thank you for your interest in joining Techwave.",
+        "body": "We have successfully received your information and resume. Our team will review your profile and, if it matches our opportunities, we will get in touch with you.",
+        "tagline": "Talent · Technology · Innovation"
+      },
       "notConfigured": "The form is not available yet. Send your resume to info@techwaveitservices.com."
     }
   }

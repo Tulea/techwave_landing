@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useContent, dictionaries } from '../../i18n.jsx'
+import SuccessCard from '../SuccessCard.jsx'
 import { ZOHO_CONSENT, phoneDigits, isValidPhone, redirectUrl } from '../../zoho.js'
 
 export const ZOHO_FIELDS = {
@@ -68,11 +69,7 @@ export default function ContactForm({ sent = false }) {
   const actionUrl = getActionUrl()
 
   if (sent) {
-    return (
-      <div className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center" role="status">
-        <p className="text-lg font-semibold text-green-800">{contact.success}</p>
-      </div>
-    )
+    return <SuccessCard icon="mail" message={contact.success} />
   }
 
   const onChange = (e) => {

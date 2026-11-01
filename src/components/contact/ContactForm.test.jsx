@@ -80,6 +80,6 @@ describe('ContactForm', () => {
 
   it('muestra la confirmación al volver de Zoho', () => {
     render(<ContactForm sent />)
-    expect(screen.getByRole('status')).toHaveTextContent(contact.success)
+    expect(screen.getByRole('status')).toHaveTextContent(contact.success.title)
   })
 })

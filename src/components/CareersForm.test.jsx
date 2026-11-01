@@ -85,6 +85,6 @@ describe('CareersForm', () => {
 
   it('muestra la confirmación al volver de Zoho', () => {
     render(<CareersForm sent />)
-    expect(screen.getByRole('status')).toHaveTextContent(t.success)
+    expect(screen.getByRole('status')).toHaveTextContent(t.success.title)
   })
 })

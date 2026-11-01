@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useContent } from '../i18n.jsx'
+import SuccessCard from './SuccessCard.jsx'
 import { ZOHO_CONSENT, phoneDigits, isValidPhone, redirectUrl } from '../zoho.js'
 
 const MAX_CV_BYTES = 5 * 1024 * 1024
@@ -66,11 +67,7 @@ export default function CareersForm({ position = '', sent = false }) {
   const [phone, setPhone] = useState('')
 
   if (sent) {
-    return (
-      <div className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center" role="status">
-        <p className="text-lg font-semibold text-green-800">{t.success}</p>
-      </div>
-    )
+    return <SuccessCard icon="doubleCheck" message={t.success} />
   }
 
   const onSubmit = (e) => {

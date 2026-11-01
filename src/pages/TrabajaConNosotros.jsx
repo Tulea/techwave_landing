@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useContent } from '../i18n.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
+import { useRedirectAfter } from '../hooks/useRedirectAfter.js'
 import SectionHeading from '../components/SectionHeading.jsx'
 import CareersForm from '../components/CareersForm.jsx'
 
@@ -9,7 +10,9 @@ export default function TrabajaConNosotros() {
   const { careers, services } = useContent()
   const [params] = useSearchParams()
   const [position, setPosition] = useState('')
+  const sent = params.get('enviado') === '1'
   usePageMeta('trabaja')
+  useRedirectAfter(sent, '/')
 
   const apply = (title) => {
     setPosition(title)
@@ -72,7 +75,7 @@ export default function TrabajaConNosotros() {
         <div className="container-site max-w-3xl">
           <SectionHeading title={careers.form.title} intro={careers.form.intro} />
           <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
-            <CareersForm position={position} sent={params.get('enviado') === '1'} />
+            <CareersForm position={position} sent={sent} />
           </div>
           <p className="mt-6 text-center text-sm text-slate-500">{careers.email}</p>
         </div>

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useContent } from '../i18n.jsx'
+import SuccessCard from './SuccessCard.jsx'
+import { ZOHO_CONSENT, phoneDigits, isValidPhone, redirectUrl } from '../zoho.js'
 
 const MAX_CV_BYTES = 5 * 1024 * 1024
 const CV_TYPES = /\.(pdf|doc|docx)$/i
@@ -12,19 +14,22 @@ export const ZOHO_FIELDS = {
   position: 'SingleLine',
   message: 'MultiLine',
   cv: 'FileUpload',
+  consent: 'Checkbox',
 }
 
 const getActionUrl = () => import.meta.env.VITE_ZOHO_CAREERS_URL ?? ''
 
 function validate(form, t) {
   const errors = {}
-  const value = (name) => form.elements[ZOHO_FIELDS[name]].value.trim()
+  const value = (name) => form.elements[name].value.trim()
   if (!value('firstName')) errors.firstName = t.errors.firstName
   if (!value('lastName')) errors.lastName = t.errors.lastName
   if (!value('email')) errors.email = t.errors.emailRequired
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value('email'))) errors.email = t.errors.emailInvalid
+  if (!isValidPhone(value('phone'))) errors.phone = t.errors.phone
   if (!value('position')) errors.position = t.errors.position
-  const file = form.elements[ZOHO_FIELDS.cv].files[0]
+  if (!value('message')) errors.message = t.errors.message
+  const file = form.elements.cv.files[0]
   if (!file) errors.cv = t.errors.cvRequired
   else if (!CV_TYPES.test(file.name)) errors.cv = t.errors.cvType
   else if (file.size > MAX_CV_BYTES) errors.cv = t.errors.cvSize
@@ -59,13 +64,10 @@ export default function CareersForm({ position = '', sent = false }) {
   const [sending, setSending] = useState(false)
   const [notConfigured, setNotConfigured] = useState(false)
   const actionUrl = getActionUrl()
+  const [phone, setPhone] = useState('')
 
   if (sent) {
-    return (
-      <div className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center" role="status">
-        <p className="text-lg font-semibold text-green-800">{t.success}</p>
-      </div>
-    )
+    return <SuccessCard icon="doubleCheck" message={t.success} />
   }
 
   const onSubmit = (e) => {
@@ -101,8 +103,9 @@ export default function CareersForm({ position = '', sent = false }) {
       className="space-y-5"
     >
       <input type="hidden" name="zf_referrer_name" value="" />
-      <input type="hidden" name="zf_redirect_url" value="" />
+      <input type="hidden" name="zf_redirect_url" value={redirectUrl()} />
       <input type="hidden" name="zc_gad" value="" />
+      <input type="hidden" name={ZOHO_FIELDS.phone} value={phoneDigits(phone)} />
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="firstName" label={t.firstName} required error={errors.firstName}>
@@ -116,8 +119,19 @@ export default function CareersForm({ position = '', sent = false }) {
         <Field id="email" label={t.email} required error={errors.email}>
           <input id="email" name={ZOHO_FIELDS.email} type="email" autoComplete="email" className={inputClass} {...a11y('email')} />
         </Field>
-        <Field id="phone" label={t.phone}>
-          <input id="phone" name={ZOHO_FIELDS.phone} type="tel" autoComplete="tel" className={inputClass} />
+        <Field id="phone" label={t.phone} required error={errors.phone}>
+          <input
+            id="phone"
+            type="tel"
+            autoComplete="tel"
+            className={inputClass}
+            value={phone}
+            {...a11y('phone')}
+            onChange={(e) => {
+              setPhone(e.target.value)
+              clear('phone')()
+            }}
+          />
         </Field>
       </div>
       <Field id="position" label={t.position} required error={errors.position}>
@@ -132,8 +146,8 @@ export default function CareersForm({ position = '', sent = false }) {
           {...a11y('position')}
         />
       </Field>
-      <Field id="message" label={t.message}>
-        <textarea id="message" name={ZOHO_FIELDS.message} rows="4" className={inputClass} />
+      <Field id="message" label={t.message} required error={errors.message}>
+        <textarea id="message" name={ZOHO_FIELDS.message} rows="4" className={inputClass} {...a11y('message')} />
       </Field>
       <Field id="cv" label={t.cv} required error={errors.cv}>
         <input
@@ -150,6 +164,8 @@ export default function CareersForm({ position = '', sent = false }) {
         <label className="flex items-start gap-3 text-sm text-slate-700">
           <input
             id="consent"
+            name={ZOHO_FIELDS.consent}
+            value={ZOHO_CONSENT}
             type="checkbox"
             className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 accent-brand-800"
             {...a11y('consent')}

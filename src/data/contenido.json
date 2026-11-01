@@ -5,7 +5,7 @@
     "metaDescription": "TechWave IT Services: soluciones de tecnología, infraestructura, consultoría y ciberseguridad para empresas en Costa Rica. Su aliado estratégico en TI.",
     "brandText": "TechWave",
     "tagline": "Empresas protegidas, operación sin interrupciones.",
-    "phone": "+506 7128-7960",
+    "phone": "+506 4300-4700",
     "email": "info@techwaveitservices.com",
     "address": "San José, Costa Rica",
     "url": "https://www.techwaveitservices.com",
@@ -183,7 +183,7 @@
   "proteja": {
     "eyebrow": "Proteja sus datos",
     "title": "Soluciones de clase mundial para proteger su información",
-    "intro": "Trabajamos con cinco fabricantes líderes del mercado para proteger el activo más valioso de su empresa, sus datos, en cada frente: equipos, red, web y respaldos.",
+    "intro": "Trabajamos con seis fabricantes líderes del mercado para proteger el activo más valioso de su empresa, sus datos, en cada frente: equipos, red, web, aplicaciones y respaldos.",
     "cta": {
       "label": "Hablemos de cómo proteger su empresa",
       "to": "/contacto"
@@ -222,6 +222,12 @@
         "logo": "/assets/logos/Veeam.svg",
         "tag": "Respaldo y recuperación",
         "body": "Respaldos de servidores, máquinas virtuales, Microsoft 365 y nube, con recuperación rápida ante desastres o ransomware."
+      },
+      {
+        "name": "Checkmarx",
+        "logo": "/assets/logos/Checkmarx.svg",
+        "tag": "Seguridad de aplicaciones",
+        "body": "Análisis del código y de las librerías de sus aplicaciones para encontrar y corregir vulnerabilidades desde el desarrollo, antes de que lleguen a producción."
       }
     ],
     "note": "Alianzas estratégicas con fabricantes reconocidos a nivel mundial."
@@ -241,7 +247,7 @@
         "label": "Clientes atendidos"
       },
       {
-        "value": 5,
+        "value": 6,
         "suffix": "",
         "label": "Fabricantes aliados"
       },
@@ -275,11 +281,11 @@
   },
   "finalCta": {
     "title": "¿Tiene una emergencia o un proyecto en mente?",
-    "body": "Cuéntenos su reto y le respondemos con una propuesta clara y sin compromiso.",
+    "body": "Cuéntenos su situación y le respondemos en menos de 24 horas con una propuesta clara y sin compromiso.",
     "buttons": [
       {
-        "label": "Llámenos: +506 7128-7960",
-        "to": "tel:+50671287960",
+        "label": "Llámenos: +506 4300-4700",
+        "to": "tel:+50643004700",
         "primary": false
       },
       {
@@ -355,11 +361,11 @@
       },
       "phone": {
         "label": "Teléfono",
-        "required": false
+        "required": true
       },
       "service": {
         "label": "Servicio de interés",
-        "required": false,
+        "required": true,
         "placeholder": "Seleccione una opción"
       },
       "message": {
@@ -371,6 +377,8 @@
         "lastName": "Ingrese su apellido",
         "emailRequired": "Ingrese su correo",
         "emailInvalid": "Ingrese un correo válido",
+        "phone": "Ingrese un teléfono válido",
+        "service": "Seleccione un servicio",
         "message": "Escriba su mensaje"
       },
       "submit": "Enviar",
@@ -382,9 +390,13 @@
         "error": "Debe aceptar la política de privacidad"
       }
     },
-    "success": "¡Gracias por enviar! Le contactaremos muy pronto.",
-    "notConfigured": "El formulario aún no está configurado. Escríbanos directamente a info@techwaveitservices.com.",
-    "error": "No se pudo enviar su mensaje. Inténtelo de nuevo o escríbanos a info@techwaveitservices.com."
+    "success": {
+      "title": "¡Gracias por contactarnos!",
+      "subtitle": "Hemos recibido tu mensaje.",
+      "body": "Nuestro equipo revisará tu consulta y se pondrá en contacto contigo a la brevedad para brindarte la atención que necesitas.",
+      "tagline": "Tecnología · Innovación · Confianza"
+    },
+    "notConfigured": "El formulario aún no está configurado. Escríbanos directamente a info@techwaveitservices.com."
   },
   "footer": {
     "links": "Enlaces",
@@ -400,22 +412,6 @@
     "title": "Página no encontrada",
     "body": "La página que busca no existe o fue movida.",
     "cta": "Volver al inicio"
-  },
-  "cases": {
-    "eyebrow": "Casos de éxito",
-    "title": "Resultados reales con clientes reales",
-    "challengeLabel": "Reto",
-    "solutionLabel": "Solución",
-    "resultLabel": "Resultado",
-    "items": [
-      {
-        "client": "Vivibanco",
-        "industry": "Banca y finanzas",
-        "challenge": "Fortalecer la seguridad de su infraestructura tecnológica y ordenar las políticas de dominio.",
-        "solution": "Revisión y optimización de las políticas de dominio y mejora de la configuración de seguridad de la infraestructura.",
-        "result": "Una infraestructura más segura y políticas de dominio consistentes. El equipo de infraestructura del banco recomienda nuestros servicios."
-      }
-    ]
   },
   "industries": {
     "eyebrow": "Industrias",
@@ -493,7 +489,7 @@
     },
     "nosotros": {
       "title": "Nosotros — TechWave IT Services",
-      "description": "Conozca a TechWave IT Services: empresa costarricense de tecnología, infraestructura, consultoría y ciberseguridad, aliada de Sophos, Fortinet, Lumu, Cloudflare y Veeam."
+      "description": "Conozca a TechWave IT Services: empresa costarricense de tecnología, infraestructura, consultoría y ciberseguridad, aliada de Sophos, Fortinet, Lumu, Cloudflare, Veeam y Checkmarx."
     },
     "servicios": {
       "title": "Servicios de TI y ciberseguridad — TechWave IT Services",
@@ -501,7 +497,7 @@
     },
     "contacto": {
       "title": "Contacto — TechWave IT Services",
-      "description": "Solicite un assessment gratis o una cotización. Llámenos al +506 7128-7960 o escríbanos a info@techwaveitservices.com."
+      "description": "Solicite un assessment gratis o una cotización. Llámenos al +506 4300-4700 o escríbanos a info@techwaveitservices.com."
     },
     "privacidad": {
       "title": "Política de privacidad — TechWave IT Services",
@@ -546,14 +542,21 @@
         "lastName": "Ingrese su apellido",
         "emailRequired": "Ingrese su correo",
         "emailInvalid": "Ingrese un correo válido",
+        "phone": "Ingrese un teléfono válido",
         "position": "Indique el puesto o área",
+        "message": "Escriba algo sobre usted",
         "cvRequired": "Adjunte su CV",
         "cvType": "El CV debe ser PDF o Word",
         "cvSize": "El CV no puede pesar más de 5 MB"
       },
       "submit": "Enviar postulación",
       "submitting": "Enviando…",
-      "success": "¡Gracias por postularse! Recibimos su CV y le contactaremos si su perfil se ajusta a una oportunidad.",
+      "success": {
+        "title": "¡Solicitud recibida!",
+        "subtitle": "Gracias por tu interés en formar parte de Techwave.",
+        "body": "Hemos recibido correctamente tu información y currículum. Nuestro equipo revisará tu perfil y, si se ajusta a nuestras oportunidades, nos pondremos en contacto contigo.",
+        "tagline": "Talento · Tecnología · Innovación"
+      },
       "notConfigured": "El formulario aún no está disponible. Envíe su CV a info@techwaveitservices.com."
     }
   }

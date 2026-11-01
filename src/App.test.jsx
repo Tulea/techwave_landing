@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App.jsx'
-import { nav, footer, notFound, privacy, seo, site, painPoints, industries, careers } from './data/content.js'
+import { nav, footer, notFound, privacy, seo, site, painPoints, industries, careers, contact } from './data/content.js'
 import { mockIntersectionObserver } from './test/mockIntersectionObserver.js'
 
 function renderAt(path) {
@@ -70,6 +70,11 @@ describe('App routes', () => {
   it('muestra la confirmación cuando Zoho redirige con enviado=1', () => {
     renderAt('/trabaja-con-nosotros?enviado=1')
     expect(screen.getByRole('status')).toHaveTextContent(careers.form.success)
+  })
+
+  it('muestra la confirmación de contacto cuando Zoho redirige con enviado=1', () => {
+    renderAt('/contacto?enviado=1')
+    expect(screen.getByRole('status')).toHaveTextContent(contact.success)
   })
 
   it('muestra el botón flotante de WhatsApp con el número y mensaje', () => {

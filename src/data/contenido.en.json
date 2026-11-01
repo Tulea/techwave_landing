@@ -355,11 +355,11 @@
       },
       "phone": {
         "label": "Phone",
-        "required": false
+        "required": true
       },
       "service": {
         "label": "Service of interest",
-        "required": false,
+        "required": true,
         "placeholder": "Select an option"
       },
       "message": {
@@ -371,6 +371,8 @@
         "lastName": "Enter your last name",
         "emailRequired": "Enter your email",
         "emailInvalid": "Enter a valid email",
+        "phone": "Enter a valid phone number",
+        "service": "Select a service",
         "message": "Write your message"
       },
       "submit": "Send",
@@ -383,8 +385,7 @@
       }
     },
     "success": "Thank you for reaching out! We will contact you very soon.",
-    "notConfigured": "The form is not configured yet. Email us directly at info@techwaveitservices.com.",
-    "error": "Your message could not be sent. Please try again or email us at info@techwaveitservices.com."
+    "notConfigured": "The form is not configured yet. Email us directly at info@techwaveitservices.com."
   },
   "footer": {
     "links": "Links",
@@ -530,7 +531,9 @@
         "lastName": "Enter your last name",
         "emailRequired": "Enter your email",
         "emailInvalid": "Enter a valid email",
+        "phone": "Enter a valid phone number",
         "position": "Enter the position or area",
+        "message": "Tell us something about yourself",
         "cvRequired": "Attach your resume",
         "cvType": "Your resume must be a PDF or Word file",
         "cvSize": "Your resume cannot be larger than 5 MB"

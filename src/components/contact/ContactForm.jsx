@@ -1,6 +1,18 @@
 import { useState } from 'react'
-import { useZohoForm } from '../../hooks/useZohoForm.js'
 import { useContent, dictionaries } from '../../i18n.jsx'
+import { ZOHO_CONSENT, phoneDigits, isValidPhone, redirectUrl } from '../../zoho.js'
+
+export const ZOHO_FIELDS = {
+  firstName: 'Name_First',
+  lastName: 'Name_Last',
+  email: 'Email',
+  phone: 'PhoneNumber_countrycode',
+  service: 'Dropdown',
+  message: 'MultiLine',
+  consent: 'Checkbox',
+}
+
+const getActionUrl = () => import.meta.env.VITE_ZOHO_FORM_URL ?? ''
 
 const initialValues = { firstName: '', lastName: '', email: '', phone: '', service: '', message: '', consent: false }
 
@@ -20,6 +32,8 @@ function validate(values, contact) {
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
     errors.email = contact.form.errors.emailInvalid
   }
+  if (!isValidPhone(values.phone)) errors.phone = contact.form.errors.phone
+  if (!values.service) errors.service = contact.form.errors.service
   if (!values.message.trim()) errors.message = contact.form.errors.message
   if (!values.consent) errors.consent = contact.form.consent.error
   return errors
@@ -45,36 +59,15 @@ function Field({ name, label, required, errors, children }) {
   )
 }
 
-export default function ContactForm() {
+export default function ContactForm({ sent = false }) {
   const { contact } = useContent()
-  const { status, error, submit } = useZohoForm(contact)
   const [values, setValues] = useState(() => ({ ...initialValues, service: serviceFromUrl() }))
   const [errors, setErrors] = useState({})
+  const [sending, setSending] = useState(false)
+  const [notConfigured, setNotConfigured] = useState(false)
+  const actionUrl = getActionUrl()
 
-  const onChange = (e) => {
-    const { name, value, type, checked } = e.target
-    setValues((v) => ({ ...v, [name]: type === 'checkbox' ? checked : value }))
-    setErrors((err) => ({ ...err, [name]: undefined }))
-  }
-
-  const onSubmit = async (e) => {
-    e.preventDefault()
-    const v = validate(values, contact)
-    setErrors(v)
-    if (Object.keys(v).length > 0) return
-
-    const payload = {
-      'Primer Nombre': values.firstName.trim(),
-      Apellido: values.lastName.trim(),
-      Email: values.email.trim(),
-      Teléfono: values.phone.trim(),
-      Servicio: values.service,
-      Mensaje: values.message.trim(),
-    }
-    await submit(payload)
-  }
-
-  if (status === 'success') {
+  if (sent) {
     return (
       <div className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center" role="status">
         <p className="text-lg font-semibold text-green-800">{contact.success}</p>
@@ -82,33 +75,70 @@ export default function ContactForm() {
     )
   }
 
+  const onChange = (e) => {
+    const { id, value, type, checked } = e.target
+    setValues((v) => ({ ...v, [id]: type === 'checkbox' ? checked : value }))
+    setErrors((err) => ({ ...err, [id]: undefined }))
+  }
+
+  const onSubmit = (e) => {
+    const found = validate(values, contact)
+    setErrors(found)
+    if (Object.keys(found).length) {
+      e.preventDefault()
+      return
+    }
+    if (!actionUrl) {
+      e.preventDefault()
+      setNotConfigured(true)
+      return
+    }
+    setSending(true)
+  }
+
+  const a11y = (name) => ({
+    'aria-invalid': Boolean(errors[name]),
+    'aria-describedby': errors[name] ? `${name}-error` : undefined,
+  })
+
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-5">
+    <form
+      action={actionUrl || undefined}
+      method="POST"
+      encType="multipart/form-data"
+      acceptCharset="UTF-8"
+      onSubmit={onSubmit}
+      noValidate
+      className="space-y-5"
+    >
+      <input type="hidden" name="zf_referrer_name" value="" />
+      <input type="hidden" name="zf_redirect_url" value={redirectUrl()} />
+      <input type="hidden" name="zc_gad" value="" />
+      <input type="hidden" name={ZOHO_FIELDS.phone} value={phoneDigits(values.phone)} />
+
       <div className="grid gap-5 sm:grid-cols-2">
         <Field name="firstName" label={contact.form.firstName.label} required={contact.form.firstName.required} errors={errors}>
           <input
             id="firstName"
-            name="firstName"
+            name={ZOHO_FIELDS.firstName}
             type="text"
             autoComplete="given-name"
             className={inputClass}
             value={values.firstName}
             onChange={onChange}
-            aria-invalid={Boolean(errors.firstName)}
-            aria-describedby={errors.firstName ? 'firstName-error' : undefined}
+            {...a11y('firstName')}
           />
         </Field>
         <Field name="lastName" label={contact.form.lastName.label} required={contact.form.lastName.required} errors={errors}>
           <input
             id="lastName"
-            name="lastName"
+            name={ZOHO_FIELDS.lastName}
             type="text"
             autoComplete="family-name"
             className={inputClass}
             value={values.lastName}
             onChange={onChange}
-            aria-invalid={Boolean(errors.lastName)}
-            aria-describedby={errors.lastName ? 'lastName-error' : undefined}
+            {...a11y('lastName')}
           />
         </Field>
       </div>
@@ -116,30 +146,36 @@ export default function ContactForm() {
         <Field name="email" label={contact.form.email.label} required={contact.form.email.required} errors={errors}>
           <input
             id="email"
-            name="email"
+            name={ZOHO_FIELDS.email}
             type="email"
             autoComplete="email"
             className={inputClass}
             value={values.email}
             onChange={onChange}
-            aria-invalid={Boolean(errors.email)}
-            aria-describedby={errors.email ? 'email-error' : undefined}
+            {...a11y('email')}
           />
         </Field>
         <Field name="phone" label={contact.form.phone.label} required={contact.form.phone.required} errors={errors}>
           <input
             id="phone"
-            name="phone"
             type="tel"
             autoComplete="tel"
             className={inputClass}
             value={values.phone}
             onChange={onChange}
+            {...a11y('phone')}
           />
         </Field>
       </div>
       <Field name="service" label={contact.form.service.label} required={contact.form.service.required} errors={errors}>
-        <select id="service" name="service" className={inputClass} value={values.service} onChange={onChange}>
+        <select
+          id="service"
+          name={ZOHO_FIELDS.service}
+          className={inputClass}
+          value={values.service}
+          onChange={onChange}
+          {...a11y('service')}
+        >
           <option value="">{contact.form.service.placeholder}</option>
           {contact.services.map((s, i) => (
             <option key={serviceValues[i]} value={serviceValues[i]}>
@@ -151,13 +187,12 @@ export default function ContactForm() {
       <Field name="message" label={contact.form.message.label} required={contact.form.message.required} errors={errors}>
         <textarea
           id="message"
-          name="message"
+          name={ZOHO_FIELDS.message}
           rows="5"
           className={inputClass}
           value={values.message}
           onChange={onChange}
-          aria-invalid={Boolean(errors.message)}
-          aria-describedby={errors.message ? 'message-error' : undefined}
+          {...a11y('message')}
         />
       </Field>
 
@@ -165,13 +200,13 @@ export default function ContactForm() {
         <label className="flex items-start gap-3 text-sm text-slate-700">
           <input
             id="consent"
-            name="consent"
+            name={ZOHO_FIELDS.consent}
+            value={ZOHO_CONSENT}
             type="checkbox"
             className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 accent-brand-800"
             checked={values.consent}
             onChange={onChange}
-            aria-invalid={Boolean(errors.consent)}
-            aria-describedby={errors.consent ? 'consent-error' : undefined}
+            {...a11y('consent')}
           />
           <span>
             {contact.form.consent.labelBefore}
@@ -189,14 +224,14 @@ export default function ContactForm() {
         )}
       </div>
 
-      {status === 'error' && (
+      {notConfigured && (
         <p role="alert" className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
-          {error}
+          {contact.notConfigured}
         </p>
       )}
 
-      <button type="submit" disabled={status === 'loading'} className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60">
-        {status === 'loading' ? contact.form.submitting : contact.form.submit}
+      <button type="submit" disabled={sending} className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60">
+        {sending ? contact.form.submitting : contact.form.submit}
       </button>
     </form>
   )

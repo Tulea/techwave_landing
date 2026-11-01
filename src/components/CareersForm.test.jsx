@@ -11,7 +11,9 @@ async function fillValid(user) {
   await user.type(label(t.firstName), 'Ana')
   await user.type(label(t.lastName), 'Rojas')
   await user.type(label(t.email), 'ana@correo.com')
+  await user.type(label(t.phone), '8888-7777')
   await user.type(label(t.position), 'Ciberseguridad')
+  await user.type(label(t.message), 'Tengo experiencia en redes')
   await user.upload(label(t.cv), pdf())
   await user.click(screen.getByRole('checkbox'))
 }
@@ -29,7 +31,9 @@ describe('CareersForm', () => {
       t.errors.firstName,
       t.errors.lastName,
       t.errors.emailRequired,
+      t.errors.phone,
       t.errors.position,
+      t.errors.message,
       t.errors.cvRequired,
       contact.form.consent.error,
     ]) {

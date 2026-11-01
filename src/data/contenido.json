@@ -355,11 +355,11 @@
       },
       "phone": {
         "label": "Teléfono",
-        "required": false
+        "required": true
       },
       "service": {
         "label": "Servicio de interés",
-        "required": false,
+        "required": true,
         "placeholder": "Seleccione una opción"
       },
       "message": {
@@ -371,6 +371,8 @@
         "lastName": "Ingrese su apellido",
         "emailRequired": "Ingrese su correo",
         "emailInvalid": "Ingrese un correo válido",
+        "phone": "Ingrese un teléfono válido",
+        "service": "Seleccione un servicio",
         "message": "Escriba su mensaje"
       },
       "submit": "Enviar",
@@ -383,8 +385,7 @@
       }
     },
     "success": "¡Gracias por enviar! Le contactaremos muy pronto.",
-    "notConfigured": "El formulario aún no está configurado. Escríbanos directamente a info@techwaveitservices.com.",
-    "error": "No se pudo enviar su mensaje. Inténtelo de nuevo o escríbanos a info@techwaveitservices.com."
+    "notConfigured": "El formulario aún no está configurado. Escríbanos directamente a info@techwaveitservices.com."
   },
   "footer": {
     "links": "Enlaces",
@@ -530,7 +531,9 @@
         "lastName": "Ingrese su apellido",
         "emailRequired": "Ingrese su correo",
         "emailInvalid": "Ingrese un correo válido",
+        "phone": "Ingrese un teléfono válido",
         "position": "Indique el puesto o área",
+        "message": "Escriba algo sobre usted",
         "cvRequired": "Adjunte su CV",
         "cvType": "El CV debe ser PDF o Word",
         "cvSize": "El CV no puede pesar más de 5 MB"

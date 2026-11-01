@@ -5,7 +5,7 @@
     "metaDescription": "TechWave IT Services: soluciones de tecnología, infraestructura, consultoría y ciberseguridad para empresas en Costa Rica. Su aliado estratégico en TI.",
     "brandText": "TechWave",
     "tagline": "Empresas protegidas, operación sin interrupciones.",
-    "phone": "+506 7128-7960",
+    "phone": "+506 4300-4700",
     "email": "info@techwaveitservices.com",
     "address": "San José, Costa Rica",
     "url": "https://www.techwaveitservices.com",
@@ -278,8 +278,8 @@
     "body": "Cuéntenos su reto y le respondemos con una propuesta clara y sin compromiso.",
     "buttons": [
       {
-        "label": "Llámenos: +506 7128-7960",
-        "to": "tel:+50671287960",
+        "label": "Llámenos: +506 4300-4700",
+        "to": "tel:+50643004700",
         "primary": false
       },
       {
@@ -501,7 +501,7 @@
     },
     "contacto": {
       "title": "Contacto — TechWave IT Services",
-      "description": "Solicite un assessment gratis o una cotización. Llámenos al +506 7128-7960 o escríbanos a info@techwaveitservices.com."
+      "description": "Solicite un assessment gratis o una cotización. Llámenos al +506 4300-4700 o escríbanos a info@techwaveitservices.com."
     },
     "privacidad": {
       "title": "Política de privacidad — TechWave IT Services",

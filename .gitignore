@@ -16,3 +16,8 @@ docs/
 /Logos/
 Sitio web/
 README.md
+
+*.test.js
+*.test.jsx
+src/test/
+.env.example

@@ -31,14 +31,14 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-10 lg:flex">
+        <ul className="hidden items-center gap-6 xl:flex">
           {nav.items.map((item) => (
             <li key={item.to}>
               <NavLink
                 to={item.to}
                 end={item.to === '/'}
                 className={({ isActive }) =>
-                  `text-lg font-medium transition ${
+                  `whitespace-nowrap text-lg font-medium transition ${
                     isActive ? 'font-semibold text-brand-800' : 'text-slate-600 hover:text-brand-800'
                   }`
                 }
@@ -49,17 +49,17 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2 lg:gap-3">
+        <div className="flex items-center gap-2 xl:gap-3">
           <LanguageToggle />
 
-          <Link to="/contacto" className="btn-primary hidden lg:inline-flex">
+          <Link to="/contacto" className="btn-primary hidden xl:inline-flex">
             {nav.cta}
           </Link>
 
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-brand-800 hover:bg-brand-50 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-brand-800 hover:bg-brand-50 xl:hidden"
             aria-expanded={open}
             aria-label={open ? nav.menuClose : nav.menuOpen}
           >
@@ -71,7 +71,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white lg:hidden">
+        <div className="border-t border-slate-200 bg-white xl:hidden">
           <ul className="container-site flex flex-col gap-1 py-3">
             {nav.items.map((item) => (
               <li key={item.to}>

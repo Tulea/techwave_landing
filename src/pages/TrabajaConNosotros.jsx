@@ -6,6 +6,23 @@ import { useRedirectAfter } from '../hooks/useRedirectAfter.js'
 import SectionHeading from '../components/SectionHeading.jsx'
 import CareersForm from '../components/CareersForm.jsx'
 
+function JobList({ title, items = [] }) {
+  if (!items.length) return null
+  return (
+    <div>
+      <h4 className="text-sm font-bold text-brand-900">{title}</h4>
+      <ul className="mt-2 space-y-1.5 text-sm text-slate-600">
+        {items.map((item) => (
+          <li key={item} className="flex gap-2">
+            <span className="text-accent-500" aria-hidden="true">•</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 export default function TrabajaConNosotros() {
   const { careers, services } = useContent()
   const [params] = useSearchParams()
@@ -52,16 +69,36 @@ export default function TrabajaConNosotros() {
               {careers.openings.map((job) => (
                 <article
                   key={job.title}
-                  className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between"
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
-                  <div>
-                    <h3 className="text-lg font-bold text-brand-900">{job.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">{[job.area, job.mode, job.location].filter(Boolean).join(' · ')}</p>
-                    {job.description && <p className="mt-3 text-sm leading-relaxed text-slate-600">{job.description}</p>}
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 className="text-lg font-bold text-brand-900">{job.title}</h3>
+                      <p className="mt-1 text-sm text-slate-500">
+                        {[job.area, job.mode, job.location, job.schedule, job.onCall].filter(Boolean).join(' · ')}
+                      </p>
+                      {job.description && <p className="mt-3 text-sm leading-relaxed text-slate-600">{job.description}</p>}
+                    </div>
+                    <button type="button" onClick={() => apply(job.title)} className="btn-primary shrink-0">
+                      {careers.applyLabel}
+                    </button>
                   </div>
-                  <button type="button" onClick={() => apply(job.title)} className="btn-primary shrink-0">
-                    {careers.applyLabel}
-                  </button>
+                  <details className="mt-4">
+                    <summary className="cursor-pointer text-sm font-semibold text-brand-800 hover:text-accent-600">
+                      {careers.detailsLabel}
+                    </summary>
+                    <div className="mt-4 grid gap-6 md:grid-cols-2">
+                      <JobList title={careers.responsibilitiesTitle} items={job.responsibilities} />
+                      <JobList title={careers.requirementsTitle} items={job.requirements} />
+                      <JobList title={careers.niceToHaveTitle} items={job.niceToHave} />
+                      {job.impact && (
+                        <div>
+                          <h4 className="text-sm font-bold text-brand-900">{careers.impactTitle}</h4>
+                          <p className="mt-2 text-sm leading-relaxed text-slate-600">{job.impact}</p>
+                        </div>
+                      )}
+                    </div>
+                  </details>
                 </article>
               ))}
             </div>

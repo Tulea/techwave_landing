@@ -34,6 +34,10 @@
         "to": "/servicios"
       },
       {
+        "label": "Careers",
+        "to": "/trabaja-con-nosotros"
+      },
+      {
         "label": "Contact",
         "to": "/contacto"
       }
@@ -404,8 +408,7 @@
     "contact": "Contact",
     "rights": "All rights reserved.",
     "privacy": "Privacy policy",
-    "social": "LinkedIn",
-    "careers": "Careers"
+    "social": "LinkedIn"
   },
   "notFound": {
     "eyebrow": "Error 404",
@@ -524,8 +527,210 @@
     "openingsTitle": "Open positions",
     "noOpenings": "We have no open positions right now, but we always want to meet talented people. Send us your resume using the form below.",
     "applyLabel": "Apply",
+    "detailsLabel": "View job description",
+    "responsibilitiesTitle": "Responsibilities",
+    "requirementsTitle": "Requirements",
+    "niceToHaveTitle": "Preferred qualifications",
+    "impactTitle": "Expected outcomes",
     "email": "info@techwaveitservices.com",
-    "openings": [],
+    "openings": [
+      {
+        "title": "SOC Analyst L2 (Detection & Response)",
+        "mode": "Hybrid or remote from Costa Rica",
+        "schedule": "Full-time",
+        "onCall": "Rotating on-call, one week out of four",
+        "description": "Responsible for investigating, containing and documenting security incidents in client environments, with response times measured in minutes rather than days. The role is supported by a 24/7 detection platform and automation agents, allowing work to focus on investigation rather than on closing false positives.",
+        "responsibilities": [
+          "Investigate escalated alerts from EDR, firewall, identity, email and cloud, and decide whether they are real incidents.",
+          "Contain threats: isolate devices, block indicators, disable compromised accounts and coordinate with the client.",
+          "Write and tune detection rules mapped to MITRE ATT&CK.",
+          "Improve triage playbooks and automations.",
+          "Write clear incident reports with a timeline, root cause and actionable recommendations.",
+          "Take part in the on-call rotation and in tabletop exercises with clients."
+        ],
+        "requirements": [
+          "2 or more years in a SOC, in incident response or in an equivalent security role.",
+          "Experience investigating alerts in at least one EDR or XDR (Sophos, CrowdStrike, SentinelOne, Defender or other).",
+          "Proficiency in analyzing Windows, Linux, firewall and Active Directory or Entra ID logs.",
+          "Working knowledge of MITRE ATT&CK and the incident response lifecycle (NIST SP 800-61).",
+          "Ability to communicate technical incidents to non-technical audiences.",
+          "Proficiency in Spanish and the ability to read technical English."
+        ],
+        "niceToHave": [
+          "Python or PowerShell scripting to automate tasks.",
+          "Experience with SIEM (Wazuh, Splunk, Elastic or similar).",
+          "Certifications such as CySA+, GCIH, BTL1 or Security+ (not mandatory; the company provides support for obtaining them).",
+          "Experience in regulated environments."
+        ]
+      },
+      {
+        "title": "Incident Responder & DFIR Specialist",
+        "mode": "Hybrid or remote from Costa Rica",
+        "onCall": "Rotating on-call for critical incidents",
+        "description": "Responsible for leading the response to critical client security incidents, including containment, forensically rigorous investigation and strengthening the client's security posture after the incident.",
+        "responsibilities": [
+          "Lead the full incident management lifecycle: containment, eradication, recovery and lessons learned.",
+          "Perform forensic analysis of endpoints, memory, logs and cloud, preserving the chain of custody.",
+          "Reconstruct the attack timeline and determine its scope and impact.",
+          "Prepare executive and technical reports, and support the client before auditors or regulators.",
+          "Design incident response plans and facilitate tabletop exercises."
+        ],
+        "requirements": [
+          "3 or more years of experience in incident response or digital forensics.",
+          "Command of forensic tools (KAPE, Velociraptor, Volatility, Autopsy or similar).",
+          "Experience investigating ransomware, email compromise or Active Directory intrusions.",
+          "Ability to communicate clearly and composedly in high-pressure situations."
+        ],
+        "niceToHave": [
+          "GCFA, GCIH, GCFE or eCIR.",
+          "Forensic experience in AWS or Azure.",
+          "Basic malware analysis."
+        ]
+      },
+      {
+        "title": "Vulnerability Management Engineer",
+        "mode": "Hybrid or remote from Costa Rica",
+        "description": "Responsible for identifying vulnerabilities before they are exploited and ensuring their remediation. The objective of the role is to achieve a sustained reduction in each client's real risk, beyond the delivery of reports.",
+        "responsibilities": [
+          "Run authenticated internal and external scans across infrastructure and cloud.",
+          "Prioritize findings by real risk: CVSS, active exploitation (CISA KEV, EPSS) and asset criticality.",
+          "Support the client's IT teams through remediation and validate it with re-tests.",
+          "Review configurations against CIS Benchmarks: servers, firewalls, cloud and privileged identities.",
+          "Measure and report trends: remediation time, exposure and SLA compliance."
+        ],
+        "requirements": [
+          "2 or more years in vulnerability management or hardening.",
+          "Experience with at least one scanner (Nessus, Qualys, OpenVAS, Rapid7 or similar).",
+          "Solid knowledge of networks, Windows, Linux and cloud services.",
+          "Ability to align priorities with IT teams using a risk-based approach."
+        ],
+        "niceToHave": [
+          "Experience in external and internal penetration testing following the OWASP and PTES methodologies.",
+          "OSCP, eJPT or PNPT.",
+          "Experience with PCI DSS scanning requirements.",
+          "Scripting to automate reports."
+        ]
+      },
+      {
+        "title": "AppSec / DevSecOps Engineer",
+        "mode": "Hybrid or remote from Costa Rica",
+        "description": "Responsible for ensuring that client software is delivered securely without affecting the agility of their development teams, by integrating security controls into the pipeline and working directly with developers.",
+        "responsibilities": [
+          "Integrate SAST, SCA, secret detection and DAST into CI/CD pipelines (GitHub Actions, GitLab CI, Azure DevOps).",
+          "Review critical code and APIs based on OWASP ASVS, OWASP Top 10 and OWASP API Security Top 10.",
+          "Facilitate threat modeling sessions for new features.",
+          "Perform security testing of web applications, APIs and mobile apps (OWASP WSTG and MASTG), including stress testing to validate resilience.",
+          "Tune WAF and API protection rules together with the SOC team.",
+          "Train development teams in secure coding."
+        ],
+        "requirements": [
+          "3 or more years as a developer, DevOps or AppSec professional, with at least 1 year focused on security.",
+          "Experience reading and reviewing code in at least two languages (Java, C#, Python, JavaScript/TypeScript or Go).",
+          "Command of tools such as Semgrep, SonarQube, Snyk, Trivy, Gitleaks, Burp Suite or OWASP ZAP.",
+          "A collaborative approach with development teams and a focus on proposing solutions."
+        ],
+        "niceToHave": [
+          "Container and Kubernetes security.",
+          "Certifications such as OSWE, GWAPT or eWPTX.",
+          "Fintech experience."
+        ]
+      },
+      {
+        "title": "GRC & vCISO Consultant",
+        "mode": "Hybrid or remote from Costa Rica",
+        "description": "Responsible for providing information security leadership to companies that do not yet have this function on a full-time basis, translating technical risks into business decisions.",
+        "responsibilities": [
+          "Lead the security program of several clients as vCISO: roadmap, policies, metrics and committees.",
+          "Prepare clients for ISO 27001 and PCI DSS audits, and for frameworks such as NIST CSF 2.0 and CIS Controls.",
+          "Guide compliance with applicable local regulations, such as CONASSIF Agreement 5-24 for supervised entities.",
+          "Assess vendor and third-party risk.",
+          "Present progress to management and boards of directors in business language.",
+          "Design privileged access governance together with the technical team (for example, with CyberArk)."
+        ],
+        "requirements": [
+          "5 or more years in information security, with at least 2 in GRC, audit or program leadership.",
+          "Experience supporting at least one certification or external audit from start to finish.",
+          "Excellent oral and written communication in Spanish, and professional English."
+        ],
+        "niceToHave": [
+          "CISSP, CISM, CISA, ISO 27001 Lead Implementer or Lead Auditor.",
+          "Experience in the financial sector."
+        ]
+      },
+      {
+        "title": "Service Delivery Coordinator",
+        "area": "Operations",
+        "mode": "Hybrid (Curridabat, San José)",
+        "description": "Responsible for ensuring that each client receives the contracted services on time and with the corresponding evidence, acting as the liaison between the technical team and clients. Cybersecurity specialization is not required; the role calls for organization, sound judgment and communication skills.",
+        "responsibilities": [
+          "Plan each client's service calendar: scans, tests, committees and reports.",
+          "Track service hour consumption and give timely notice when a client is nearing their limit.",
+          "Follow up on tickets and SLAs in Zoho Desk, and escalate delayed cases in a timely manner.",
+          "Prepare monthly service reports with the technical team.",
+          "Coordinate onboarding of new clients: access, contacts and escalation matrix."
+        ],
+        "requirements": [
+          "2 or more years in project coordination, customer service or a service desk at a technology company.",
+          "Command of management tools (Zoho, Jira, Monday or similar) and spreadsheets.",
+          "Clear written communication and the ability to manage difficult conversations with clients."
+        ],
+        "niceToHave": [
+          "ITIL Foundation.",
+          "Experience at an MSP or MSSP.",
+          "Intermediate English."
+        ],
+        "impact": "Reduced SLA breaches, properly documented billable hours and higher contract renewal rates."
+      },
+      {
+        "title": "Finance & Operations Analyst",
+        "area": "Administration and finance",
+        "mode": "Hybrid (Curridabat, San José)",
+        "description": "Responsible for the administrative and financial management of a growing company, ensuring accurate invoicing, timely collections and the information required for decision-making.",
+        "responsibilities": [
+          "Issue monthly electronic invoices and follow up on collections.",
+          "Keep operational accounting up to date in Zoho Books and reconcile bank accounts.",
+          "Support payroll, social security contributions and obligations before Hacienda and the CCSS.",
+          "Control license purchases from wholesalers and manufacturers.",
+          "Prepare monthly reports on recurring revenue, margin per service and cash flow.",
+          "Propose and automate administrative processes within the Zoho ecosystem."
+        ],
+        "requirements": [
+          "Bachelor's degree in Accounting, Finance or Business Administration (or equivalent progress).",
+          "2 or more years in an administrative-accounting role in Costa Rica.",
+          "Experience with electronic invoicing and local tax obligations.",
+          "Intermediate-to-advanced Excel or Google Sheets."
+        ],
+        "niceToHave": [
+          "Experience with Zoho Books or another cloud ERP.",
+          "Experience at technology or recurring services companies."
+        ],
+        "impact": "Predictable cash flow, tax compliance without penalties and pricing decisions based on actual margin."
+      },
+      {
+        "title": "Customer Success Manager",
+        "area": "Clients",
+        "mode": "Hybrid (Curridabat, San José), with client visits in the Greater Metropolitan Area",
+        "description": "Responsible for ensuring that clients continuously perceive the value of their security services and for fostering growth in the business relationship, representing their interests within Techwave and representing the company in their committees.",
+        "responsibilities": [
+          "Lead quarterly business reviews with each client: results, reduced risks and next steps.",
+          "Spot early signs of dissatisfaction and coordinate the action plan with the technical team.",
+          "Identify opportunities to expand services and work on them with the sales team.",
+          "Manage contract and license renewals.",
+          "Measure satisfaction (NPS and ticket-closure surveys) and propose improvements."
+        ],
+        "requirements": [
+          "3 or more years in account management, customer success or presales at technology companies.",
+          "Ability to understand technical concepts and explain them in business language.",
+          "Experience in the rigorous use of CRM tools.",
+          "Intermediate or advanced English."
+        ],
+        "niceToHave": [
+          "Experience with banking, fintech or government clients.",
+          "Basic cybersecurity knowledge (for example, ISC2 CC or Security+)."
+        ],
+        "impact": "Higher client retention, growth in recurring revenue and an increase in client referrals."
+      }
+    ],
     "form": {
       "title": "Apply",
       "intro": "Fill out the form and attach your resume. We will review it and contact you if your profile matches an opportunity.",

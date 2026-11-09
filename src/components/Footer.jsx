@@ -26,11 +26,6 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link to="/trabaja-con-nosotros" className="text-slate-400 transition hover:text-accent-400">
-                {footer.careers}
-              </Link>
-            </li>
           </ul>
         </nav>
 

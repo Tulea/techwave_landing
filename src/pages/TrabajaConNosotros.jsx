@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useContent } from '../i18n.jsx'
 import { usePageMeta } from '../hooks/usePageMeta.js'
@@ -30,6 +30,11 @@ export default function TrabajaConNosotros() {
   const sent = params.get('enviado') === '1'
   usePageMeta('trabaja')
   useRedirectAfter(sent, '/')
+
+  const formCard = useRef(null)
+  useEffect(() => {
+    if (sent) formCard.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }, [sent])
 
   const apply = (title) => {
     setPosition(title)
@@ -111,7 +116,7 @@ export default function TrabajaConNosotros() {
       <section id="postular" className="section scroll-mt-24 bg-brand-50/60">
         <div className="container-site max-w-3xl">
           <SectionHeading title={careers.form.title} intro={careers.form.intro} />
-          <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+          <div ref={formCard} className="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
             <CareersForm position={position} sent={sent} />
           </div>
           <p className="mt-6 text-center text-sm text-slate-500">{careers.email}</p>

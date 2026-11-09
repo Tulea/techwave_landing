@@ -741,7 +741,7 @@
       "position": "Position or area of interest",
       "positionPlaceholder": "E.g.: Cybersecurity, technical support…",
       "message": "Tell us about yourself",
-      "cv": "Resume (PDF or Word, max 5 MB)",
+      "cv": "Resume (PDF, max 5 MB)",
       "errors": {
         "firstName": "Enter your first name",
         "lastName": "Enter your last name",
@@ -751,7 +751,8 @@
         "position": "Enter the position or area",
         "message": "Tell us something about yourself",
         "cvRequired": "Attach your resume",
-        "cvType": "Your resume must be a PDF or Word file",
+        "cvType": "Your resume must be a PDF file",
+        "cvEmpty": "Your resume file is empty",
         "cvSize": "Your resume cannot be larger than 5 MB"
       },
       "submit": "Submit application",

@@ -4,7 +4,7 @@ import SuccessCard from './SuccessCard.jsx'
 import { ZOHO_CONSENT, phoneDigits, isValidPhone, redirectUrl } from '../zoho.js'
 
 const MAX_CV_BYTES = 5 * 1024 * 1024
-const CV_TYPES = /\.(pdf|doc|docx)$/i
+const CV_TYPES = /\.pdf$/i
 
 export const ZOHO_FIELDS = {
   firstName: 'Name_First',
@@ -32,6 +32,7 @@ function validate(form, t) {
   const file = form.elements.cv.files[0]
   if (!file) errors.cv = t.errors.cvRequired
   else if (!CV_TYPES.test(file.name)) errors.cv = t.errors.cvType
+  else if (file.size === 0) errors.cv = t.errors.cvEmpty
   else if (file.size > MAX_CV_BYTES) errors.cv = t.errors.cvSize
   if (!form.elements.consent.checked) errors.consent = t.consentError
   return errors
@@ -154,7 +155,7 @@ export default function CareersForm({ position = '', sent = false }) {
           id="cv"
           name={ZOHO_FIELDS.cv}
           type="file"
-          accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          accept=".pdf,application/pdf"
           className="block w-full text-sm text-slate-600 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-50 file:px-4 file:py-2.5 file:text-sm file:font-semibold file:text-brand-800 hover:file:bg-brand-100"
           {...a11y('cv')}
         />

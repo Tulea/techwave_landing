@@ -741,7 +741,7 @@
       "position": "Puesto o área de interés",
       "positionPlaceholder": "Ej.: Ciberseguridad, soporte técnico…",
       "message": "Cuéntenos sobre usted",
-      "cv": "CV (PDF o Word, máximo 5 MB)",
+      "cv": "CV (PDF, máximo 5 MB)",
       "errors": {
         "firstName": "Ingrese su nombre",
         "lastName": "Ingrese su apellido",
@@ -751,7 +751,8 @@
         "position": "Indique el puesto o área",
         "message": "Escriba algo sobre usted",
         "cvRequired": "Adjunte su CV",
-        "cvType": "El CV debe ser PDF o Word",
+        "cvType": "El CV debe estar en formato PDF",
+        "cvEmpty": "El archivo del CV está vacío",
         "cvSize": "El CV no puede pesar más de 5 MB"
       },
       "submit": "Enviar postulación",

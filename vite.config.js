@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
+// Rutas publicas que se incluyen en el sitemap
 const ROUTES = ['/', '/nosotros', '/servicios', '/contacto', '/trabaja-con-nosotros', '/privacidad']
 
 function contenidoHtmlPlugin(env) {
